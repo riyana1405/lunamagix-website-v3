@@ -1,0 +1,566 @@
+@import "tailwindcss";
+
+/**
+ * ═══════════════════════════════════════════════════════════════════════════════
+ * LUNAMAGIX FUTURETECH DESIGN SYSTEM v3.0
+ * Azure AI Foundry-Inspired Light Theme
+ * Clean, professional, accessible
+ * ═══════════════════════════════════════════════════════════════════════════════
+ */
+
+:root {
+  /* ═══════════════════════════════════════════════════════════════════════════
+     BRAND COLORS - LunaMagix Signature
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  /* Primary Brand - Luna Purple */
+  --luna-purple: #5C2D91;
+  --luna-purple-dark: #4B2477;
+  --luna-purple-light: #7B4FA8;
+  --luna-purple-lighter: #F5F0FA;
+  --luna-purple-subtle: rgba(92, 45, 145, 0.08);
+  
+  /* Secondary Brand - Azure Blue */
+  --azure-blue: #0078D4;
+  --azure-blue-dark: #0063B1;
+  --azure-blue-light: #3498DB;
+  --azure-blue-lighter: #F0F6FF;
+  
+  /* Accent - Teal for highlights */
+  --accent-teal: #00A5A8;
+  --accent-teal-light: #00D4D7;
+  --accent-teal-lighter: #E5F9F9;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     GRADIENTS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --gradient-primary: linear-gradient(135deg, #5C2D91 0%, #0078D4 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #4B2477 0%, #0063B1 100%);
+  --gradient-hero: linear-gradient(180deg, #FAFBFF 0%, #F0F4FF 50%, #FFFFFF 100%);
+  --gradient-section: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+  --gradient-card-subtle: linear-gradient(135deg, rgba(92, 45, 145, 0.03) 0%, rgba(0, 120, 212, 0.03) 100%);
+  --gradient-teal: linear-gradient(135deg, #00A5A8 0%, #00D4D7 100%);
+  --gradient-cta: linear-gradient(135deg, #5C2D91 0%, #0078D4 100%);
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     NEUTRAL COLORS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --white: #FFFFFF;
+  --gray-25: #FCFCFD;
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     SEMANTIC COLORS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --success: #059669;
+  --success-light: #D1FAE5;
+  --success-bg: #ECFDF5;
+  --warning: #D97706;
+  --warning-light: #FEF3C7;
+  --warning-bg: #FFFBEB;
+  --error: #DC2626;
+  --error-light: #FEE2E2;
+  --error-bg: #FEF2F2;
+  --info: #0078D4;
+  --info-light: #DBEAFE;
+  --info-bg: #EFF6FF;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     BACKGROUND & TEXT COLORS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F9FAFB;
+  --bg-tertiary: #F3F4F6;
+  --bg-elevated: #FFFFFF;
+  
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  --text-muted: #9CA3AF;
+  --text-inverse: #FFFFFF;
+  --text-link: #0078D4;
+  --text-link-hover: #0063B1;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     BORDERS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --border-light: #F3F4F6;
+  --border-default: #E5E7EB;
+  --border-strong: #D1D5DB;
+  --border-focus: #0078D4;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     SHADOWS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-button-hover: 0 4px 12px rgba(92, 45, 145, 0.25);
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     COMPONENT TOKENS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --nav-height: 64px;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-blur: 12px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+  
+  /* Legacy mappings for compatibility */
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --color-primary: #5C2D91;
+  --color-primary-light: #7B4FA8;
+  --color-secondary: #0078D4;
+  --color-secondary-light: #3498DB;
+  --color-accent: #00A5A8;
+  --color-accent-light: #00D4D7;
+  --color-charcoal: #111827;
+  --color-gray-soft: #F9FAFB;
+  --color-success: #059669;
+  --color-error: #DC2626;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     TYPOGRAPHY
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  /* Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     SPACING
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  
+  /* Container */
+  --container-max: 1400px;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     TRANSITIONS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     BUTTON TOKENS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --btn-padding-x: 1.25rem;
+  --btn-padding-y: 0.75rem;
+  --btn-radius: var(--radius-lg);
+  --btn-font-weight: 600;
+  
+  /* ═══════════════════════════════════════════════════════════════════════════
+     INPUT TOKENS
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  --input-padding-x: 1rem;
+  --input-padding-y: 0.75rem;
+  --input-radius: var(--radius-lg);
+  --input-border: var(--border-default);
+  --shadow-input-focus: 0 0 0 3px rgba(0, 120, 212, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+  
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-slide-down: slide-down 0.5s ease-out;
+  --animate-scale-in: scale-in 0.3s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Backgrounds */
+.section-alt {
+  background: var(--bg-secondary);
+}
+
+.hero-gradient {
+  background: var(--gradient-hero);
+}
+
+/* Card Styles */
+.card-base {
+  background: var(--white);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  transition: all 0.2s ease;
+}
+
+.card-base:hover {
+  border-color: var(--luna-purple-light);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+/* Button Base */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-primary:hover {
+  background: var(--gradient-primary-hover);
+  box-shadow: var(--shadow-button-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--gray-100);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--gray-200);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--gray-50);
+  border-color: var(--border-strong);
+}
+
+/* Feature Icon Styles */
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  font-size: 1.25rem;
+}
+
+.feature-icon.purple {
+  background: var(--luna-purple-lighter);
+  color: var(--luna-purple);
+}
+
+.feature-icon.blue {
+  background: var(--azure-blue-lighter);
+  color: var(--azure-blue);
+}
+
+.feature-icon.teal {
+  background: var(--accent-teal-lighter);
+  color: var(--accent-teal);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+}
+
+.badge-primary {
+  background: var(--luna-purple-lighter);
+  color: var(--luna-purple);
+}
+
+.badge-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.badge-info {
+  background: var(--info-bg);
+  color: var(--info);
+}
+
+/* Eyebrow Text */
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--luna-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Link Arrow */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-link);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.link-arrow:hover {
+  gap: 0.75rem;
+  color: var(--text-link-hover);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 2px solid var(--azure-blue);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--luna-purple);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   SELECTION & SCROLLBAR
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+::selection {
+  background-color: var(--luna-purple-light);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+
+p {
+  text-wrap: pretty;
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
