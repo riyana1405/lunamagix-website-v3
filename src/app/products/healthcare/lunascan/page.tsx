@@ -44,17 +44,17 @@ function MedicalImagingDemo() {
   ];
   
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-cyan-900/30 to-gray-900 rounded-2xl p-6 border border-cyan-500/20">
+    <div className="bg-[var(--bg-primary)] shadow-[var(--shadow-card)] rounded-2xl p-6 border border-[var(--border-default)]">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-          <Scan className="h-5 w-5 text-cyan-400" />
+        <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
+          <Scan className="h-5 w-5 text-[var(--luna-purple)]" />
           LunaScan Analysis Engine
         </h3>
-        <span className="text-xs text-cyan-400 bg-cyan-500/20 px-2 py-1 rounded">SAM3 AI</span>
+        <span className="text-xs text-[var(--luna-purple)] bg-[var(--luna-purple)]/10 px-2 py-1 rounded">SAM3 AI</span>
       </div>
       
       {/* Image Display */}
-      <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-48 bg-[var(--bg-secondary)] rounded-xl overflow-hidden mb-4">
         {/* Simulated CT scan visualization */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative w-40 h-40">
@@ -112,11 +112,11 @@ function MedicalImagingDemo() {
         {/* Progress indicator */}
         {isAnalyzing && (
           <div className="absolute bottom-3 left-3 right-3">
-            <div className="flex items-center justify-between text-xs text-cyan-400 mb-1">
+            <div className="flex items-center justify-between text-xs text-[var(--luna-purple)] mb-1">
               <span>Analyzing with SAM3...</span>
               <span>{progress}%</span>
             </div>
-            <div className="h-1 bg-gray-700 rounded-full overflow-hidden">
+            <div className="h-1 bg-[var(--bg-tertiary)] rounded-full overflow-hidden">
               <motion.div 
                 className="h-full bg-cyan-500"
                 animate={{ width: `${progress}%` }}
@@ -134,8 +134,8 @@ function MedicalImagingDemo() {
             onClick={() => setSelectedLayer(id)}
             className={`py-2 px-1 rounded-lg text-xs transition-all duration-300 ${
               selectedLayer === id 
-                ? 'bg-cyan-500/30 text-cyan-300 border border-cyan-500/50' 
-                : 'bg-gray-800/50 text-gray-400 border border-transparent hover:bg-gray-700/50'
+                ? 'bg-[var(--luna-purple)]/20 text-[var(--luna-purple)] border border-[var(--luna-purple)]/50' 
+                : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-transparent hover:bg-[var(--bg-tertiary)]'
             }`}
           >
             {name}
@@ -168,14 +168,14 @@ function MedicalImagingDemo() {
         </button>
       ) : (
         <div className="space-y-2">
-          <p className="text-xs text-gray-400 mb-2">AI Findings:</p>
+          <p className="text-xs text-[var(--text-secondary)] mb-2">AI Findings:</p>
           {results.map((result, i) => (
-            <div key={i} className="flex items-center justify-between bg-gray-800/50 rounded-lg p-3">
+            <div key={i} className="flex items-center justify-between bg-[var(--bg-secondary)] rounded-lg p-3">
               <div className="flex items-center gap-2">
                 <AlertCircle className={`h-4 w-4 ${result.confidence > 90 ? 'text-red-400' : 'text-yellow-400'}`} />
                 <div>
-                  <p className="text-sm text-white">{result.type}</p>
-                  <p className="text-xs text-gray-400">{result.location}</p>
+                  <p className="text-sm text-[var(--text-primary)]">{result.type}</p>
+                  <p className="text-xs text-[var(--text-secondary)]">{result.location}</p>
                 </div>
               </div>
               <span className={`text-sm font-medium ${result.confidence > 90 ? 'text-red-400' : 'text-yellow-400'}`}>
@@ -185,7 +185,7 @@ function MedicalImagingDemo() {
           ))}
           <button
             onClick={() => { setResults([]); setProgress(0); }}
-            className="w-full py-2 text-sm text-gray-400 hover:text-white transition-colors"
+            className="w-full py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
             Reset Demo
           </button>
@@ -338,7 +338,7 @@ export default function LunaScanPage() {
       </section>
       
       {/* Stats Section */}
-      <section className="py-12 border-y border-cyan-500/20 bg-cyan-950/20">
+      <section className="py-12 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -350,10 +350,10 @@ export default function LunaScanPage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
+                <div className="text-[var(--text-secondary)] text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -369,10 +369,10 @@ export default function LunaScanPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Enterprise Medical AI
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               Foundation model technology adapted for clinical diagnostic workflows
             </p>
           </motion.div>
@@ -387,13 +387,13 @@ export default function LunaScanPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-cyan-900/20 rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300"
+                  className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:border-[var(--luna-purple)]/40 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-cyan-400" />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                  <p className="text-[var(--text-secondary)]">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -402,7 +402,7 @@ export default function LunaScanPage() {
       </section>
       
       {/* Applications */}
-      <section className="py-20 bg-cyan-950/10">
+      <section className="py-20 bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -410,7 +410,7 @@ export default function LunaScanPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Imaging Modalities
             </h2>
           </motion.div>
@@ -423,17 +423,17 @@ export default function LunaScanPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700"
+                className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-white">{app.modality}</h3>
-                  <span className="text-cyan-400 font-bold">{app.accuracy}</span>
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)]">{app.modality}</h3>
+                  <span className="text-[var(--luna-purple)] font-bold">{app.accuracy}</span>
                 </div>
                 <ul className="space-y-2">
                   {app.uses.map((use) => (
                     <li key={use} className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-400 text-sm">{use}</span>
+                      <Check className="h-4 w-4 text-[var(--luna-purple)] flex-shrink-0 mt-0.5" />
+                      <span className="text-[var(--text-secondary)] text-sm">{use}</span>
                     </li>
                   ))}
                 </ul>
@@ -452,7 +452,7 @@ export default function LunaScanPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -465,10 +465,10 @@ export default function LunaScanPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+                className="bg-[var(--bg-primary)] rounded-xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                <p className="text-gray-400">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{faq.question}</h3>
+                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

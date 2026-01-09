@@ -52,10 +52,10 @@ function DocumentationDemo() {
   };
   
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-violet-900/30 to-gray-900 rounded-2xl p-6 border border-violet-500/20">
+    <div className="bg-[var(--bg-primary)] shadow-[var(--shadow-card)] rounded-2xl p-6 border border-[var(--border-default)]">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-          <Mic className="h-5 w-5 text-violet-400" />
+        <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
+          <Mic className="h-5 w-5 text-[var(--luna-purple)]" />
           Ambient Documentation
         </h3>
         {isListening && (
@@ -71,22 +71,22 @@ function DocumentationDemo() {
       </div>
       
       {/* Conversation Panel */}
-      <div className="relative h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 mb-4 overflow-hidden">
+      <div className="relative h-32 bg-[var(--bg-secondary)] rounded-xl p-4 mb-4 overflow-hidden border border-[var(--border-default)]">
         {transcript ? (
-          <div className="text-sm text-gray-300 space-y-1 overflow-y-auto h-full">
+          <div className="text-sm text-[var(--text-secondary)] space-y-1 overflow-y-auto h-full">
             {transcript.split('\n').map((line, i) => (
               <motion.p
                 key={i}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
-                className={i % 2 === 0 ? 'text-violet-300' : 'text-gray-400'}
+                className={i % 2 === 0 ? 'text-[var(--luna-purple)]' : 'text-[var(--text-secondary)]'}
               >
                 {i % 2 === 0 ? '👨‍⚕️ ' : '👤 '}{line}
               </motion.p>
             ))}
           </div>
         ) : (
-          <div className="flex items-center justify-center h-full text-gray-500 text-sm">
+          <div className="flex items-center justify-center h-full text-[var(--text-secondary)] text-sm">
             {isListening ? (
               <div className="flex items-center gap-2">
                 <motion.div
@@ -117,35 +117,35 @@ function DocumentationDemo() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-violet-500/10 border border-violet-500/30 rounded-xl p-4 mb-4"
+          className="bg-[var(--bg-secondary)] border border-[var(--border-default)] rounded-xl p-4 mb-4"
         >
           <div className="flex items-center gap-2 mb-3">
-            <FileCheck className="h-4 w-4 text-violet-400" />
-            <span className="text-sm font-medium text-violet-300">Generated Clinical Note</span>
+            <FileCheck className="h-4 w-4 text-[var(--luna-purple)]" />
+            <span className="text-sm font-medium text-[var(--luna-purple)]">Generated Clinical Note</span>
           </div>
           <div className="space-y-2 text-sm">
             {structuredNote.chiefComplaint && (
               <div>
-                <span className="text-gray-400">CC: </span>
-                <span className="text-white">{structuredNote.chiefComplaint}</span>
+                <span className="text-[var(--text-secondary)]">CC: </span>
+                <span className="text-[var(--text-primary)]">{structuredNote.chiefComplaint}</span>
               </div>
             )}
             {structuredNote.history && (
               <div>
-                <span className="text-gray-400">HPI: </span>
-                <span className="text-white">{structuredNote.history}</span>
+                <span className="text-[var(--text-secondary)]">HPI: </span>
+                <span className="text-[var(--text-primary)]">{structuredNote.history}</span>
               </div>
             )}
             {structuredNote.assessment && (
               <div>
-                <span className="text-gray-400">Assessment: </span>
-                <span className="text-white">{structuredNote.assessment}</span>
+                <span className="text-[var(--text-secondary)]">Assessment: </span>
+                <span className="text-[var(--text-primary)]">{structuredNote.assessment}</span>
               </div>
             )}
             {structuredNote.plan && (
               <div>
-                <span className="text-gray-400">Plan: </span>
-                <span className="text-white whitespace-pre-line">{structuredNote.plan}</span>
+                <span className="text-[var(--text-secondary)]">Plan: </span>
+                <span className="text-[var(--text-primary)] whitespace-pre-line">{structuredNote.plan}</span>
               </div>
             )}
           </div>
@@ -182,17 +182,17 @@ function DocumentationDemo() {
       
       {/* Stats */}
       <div className="mt-4 grid grid-cols-3 gap-3 text-center">
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-white">2hrs</p>
-          <p className="text-xs text-gray-400">Saved Daily</p>
+        <div className="bg-[var(--bg-secondary)] rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-[var(--text-primary)]">2hrs</p>
+          <p className="text-xs text-[var(--text-secondary)]">Saved Daily</p>
         </div>
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-violet-400">98%</p>
-          <p className="text-xs text-gray-400">Accuracy</p>
+        <div className="bg-[var(--bg-secondary)] rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-[var(--luna-purple)]">98%</p>
+          <p className="text-xs text-[var(--text-secondary)]">Accuracy</p>
         </div>
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-green-400">HIPAA</p>
-          <p className="text-xs text-gray-400">Compliant</p>
+        <div className="bg-[var(--bg-secondary)] rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-green-500">HIPAA</p>
+          <p className="text-xs text-[var(--text-secondary)]">Compliant</p>
         </div>
       </div>
     </div>
@@ -355,7 +355,7 @@ export default function LunaScribePage() {
       </section>
       
       {/* Stats Section */}
-      <section className="py-12 border-y border-violet-500/20 bg-violet-950/20">
+      <section className="py-12 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -367,10 +367,10 @@ export default function LunaScribePage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
+                <div className="text-[var(--text-secondary)] text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -386,10 +386,10 @@ export default function LunaScribePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               AI-Powered Documentation
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               Medical-grade speech recognition with clinical understanding
             </p>
           </motion.div>
@@ -404,13 +404,13 @@ export default function LunaScribePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-violet-900/20 rounded-2xl p-6 border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300"
+                  className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-violet-400" />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                  <p className="text-[var(--text-secondary)]">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -419,7 +419,7 @@ export default function LunaScribePage() {
       </section>
       
       {/* Workflow */}
-      <section className="py-20 bg-violet-950/10">
+      <section className="py-20 bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -427,7 +427,7 @@ export default function LunaScribePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               How It Works
             </h2>
           </motion.div>
@@ -442,15 +442,15 @@ export default function LunaScribePage() {
                 transition={{ delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700 h-full">
+                <div className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] h-full">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-violet-500 to-purple-500 flex items-center justify-center text-white font-bold mb-4">
                     {step.step}
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-gray-400 text-sm">{step.description}</p>
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{step.title}</h3>
+                  <p className="text-[var(--text-secondary)] text-sm">{step.description}</p>
                 </div>
                 {index < workflow.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-violet-500/30" />
+                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-[var(--luna-purple)]/30" />
                 )}
               </motion.div>
             ))}
@@ -467,7 +467,7 @@ export default function LunaScribePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Physician Feedback
             </h2>
           </motion.div>
@@ -480,12 +480,12 @@ export default function LunaScribePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700"
+                className="bg-[var(--bg-primary)] rounded-2xl p-8 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <p className="text-gray-300 text-lg mb-6 italic">"{testimonial.quote}"</p>
+                <p className="text-[var(--text-secondary)] text-lg mb-6 italic">"{testimonial.quote}"</p>
                 <div>
-                  <p className="text-white font-semibold">{testimonial.author}</p>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  <p className="text-[var(--text-primary)] font-semibold">{testimonial.author}</p>
+                  <p className="text-[var(--text-secondary)] text-sm">{testimonial.role}</p>
                 </div>
               </motion.div>
             ))}
@@ -494,7 +494,7 @@ export default function LunaScribePage() {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-20 bg-violet-950/10">
+      <section className="py-20 bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -502,7 +502,7 @@ export default function LunaScribePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -515,10 +515,10 @@ export default function LunaScribePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+                className="bg-[var(--bg-primary)] rounded-xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                <p className="text-gray-400">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{faq.question}</h3>
+                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

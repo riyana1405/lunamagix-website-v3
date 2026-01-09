@@ -39,10 +39,10 @@ function VRTherapyDemo() {
   const currentEnv = environments.find(e => e.id === environment)!;
   
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-pink-900/30 to-gray-900 rounded-2xl p-6 border border-pink-500/20">
+    <div className="bg-[var(--bg-primary)] shadow-[var(--shadow-card)] rounded-2xl p-6 border border-[var(--border-default)]">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-          <Glasses className="h-5 w-5 text-pink-400" />
+        <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
+          <Glasses className="h-5 w-5 text-[var(--luna-purple)]" />
           VR Therapy Session
         </h3>
         <div className="flex items-center gap-2">
@@ -133,12 +133,12 @@ function VRTherapyDemo() {
             onClick={() => setEnvironment(id)}
             className={`p-2 rounded-lg transition-all duration-300 flex flex-col items-center ${
               environment === id 
-                ? 'bg-pink-500/30 border border-pink-500/50' 
-                : 'bg-gray-800/50 border border-transparent hover:bg-gray-700/50'
+                ? 'bg-[var(--luna-purple)]/10 border border-[var(--luna-purple)]/50' 
+                : 'bg-[var(--bg-secondary)] border border-transparent hover:bg-[var(--bg-tertiary)]'
             }`}
           >
-            <Icon className={`h-4 w-4 mb-1 ${environment === id ? 'text-pink-400' : 'text-gray-400'}`} />
-            <span className={`text-xs ${environment === id ? 'text-pink-300' : 'text-gray-400'}`}>{name}</span>
+            <Icon className={`h-4 w-4 mb-1 ${environment === id ? 'text-[var(--luna-purple)]' : 'text-[var(--text-secondary)]'}`} />
+            <span className={`text-xs ${environment === id ? 'text-[var(--luna-purple)]' : 'text-[var(--text-secondary)]'}`}>{name}</span>
           </button>
         ))}
       </div>
@@ -151,8 +151,8 @@ function VRTherapyDemo() {
             onClick={() => setTherapyMode(mode)}
             className={`flex-1 py-2 px-3 rounded-lg text-xs capitalize transition-all duration-300 ${
               therapyMode === mode 
-                ? 'bg-pink-500 text-white' 
-                : 'bg-gray-800/50 text-gray-400 hover:bg-gray-700/50'
+                ? 'bg-[var(--luna-purple)] text-white' 
+                : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)]'
             }`}
           >
             {mode}
@@ -162,30 +162,30 @@ function VRTherapyDemo() {
       
       {/* Biofeedback */}
       <div className="grid grid-cols-2 gap-3">
-        <div className="bg-gray-800/50 rounded-lg p-3">
+        <div className="bg-[var(--bg-secondary)] rounded-lg p-3">
           <div className="flex items-center justify-between mb-1">
-            <span className="text-xs text-gray-400 flex items-center gap-1">
+            <span className="text-xs text-[var(--text-secondary)] flex items-center gap-1">
               <Heart className="h-3 w-3" /> Heart Rate
             </span>
             <span className="text-sm font-bold text-pink-400">{Math.round(heartRate)} bpm</span>
           </div>
-          <div className="h-1 bg-gray-700 rounded-full overflow-hidden">
+          <div className="h-1 bg-[var(--bg-tertiary)] rounded-full overflow-hidden">
             <motion.div 
               className="h-full bg-pink-500"
               animate={{ width: `${(heartRate / 120) * 100}%` }}
             />
           </div>
         </div>
-        <div className="bg-gray-800/50 rounded-lg p-3">
+        <div className="bg-[var(--bg-secondary)] rounded-lg p-3">
           <div className="flex items-center justify-between mb-1">
-            <span className="text-xs text-gray-400 flex items-center gap-1">
+            <span className="text-xs text-[var(--text-secondary)] flex items-center gap-1">
               <Brain className="h-3 w-3" /> Stress Level
             </span>
             <span className={`text-sm font-bold ${stressLevel < 40 ? 'text-green-400' : stressLevel < 60 ? 'text-yellow-400' : 'text-red-400'}`}>
               {Math.round(stressLevel)}%
             </span>
           </div>
-          <div className="h-1 bg-gray-700 rounded-full overflow-hidden">
+          <div className="h-1 bg-[var(--bg-tertiary)] rounded-full overflow-hidden">
             <motion.div 
               className={`h-full ${stressLevel < 40 ? 'bg-green-500' : stressLevel < 60 ? 'bg-yellow-500' : 'bg-red-500'}`}
               animate={{ width: `${stressLevel}%` }}
@@ -340,7 +340,7 @@ export default function LunaCarePage() {
       </section>
       
       {/* Stats Section */}
-      <section className="py-12 border-y border-pink-500/20 bg-pink-950/20">
+      <section className="py-12 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -352,10 +352,10 @@ export default function LunaCarePage() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
+                <div className="text-[var(--text-secondary)] text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -371,10 +371,10 @@ export default function LunaCarePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Clinical-Grade VR Therapy
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               Evidence-based protocols with real-time biofeedback adaptation
             </p>
           </motion.div>
@@ -389,13 +389,13 @@ export default function LunaCarePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-pink-900/20 rounded-2xl p-6 border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300"
+                  className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] hover:border-[var(--luna-purple)]/40 transition-all duration-300 shadow-[var(--shadow-card)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-pink-400" />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                  <p className="text-[var(--text-secondary)]">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -404,7 +404,7 @@ export default function LunaCarePage() {
       </section>
       
       {/* Applications */}
-      <section className="py-20 bg-pink-950/10">
+      <section className="py-20 bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -412,7 +412,7 @@ export default function LunaCarePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Therapeutic Applications
             </h2>
           </motion.div>
@@ -425,15 +425,15 @@ export default function LunaCarePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700"
+                className="bg-[var(--bg-primary)] rounded-2xl p-8 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-xl font-semibold text-white mb-3">{app.title}</h3>
-                <p className="text-gray-400 mb-4">{app.description}</p>
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">{app.title}</h3>
+                <p className="text-[var(--text-secondary)] mb-4">{app.description}</p>
                 <ul className="space-y-2">
                   {app.outcomes.map((outcome) => (
                     <li key={outcome} className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-pink-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300 text-sm">{outcome}</span>
+                      <Check className="h-5 w-5 text-[var(--luna-purple)] flex-shrink-0 mt-0.5" />
+                      <span className="text-[var(--text-secondary)] text-sm">{outcome}</span>
                     </li>
                   ))}
                 </ul>
@@ -452,7 +452,7 @@ export default function LunaCarePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -465,10 +465,10 @@ export default function LunaCarePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+                className="bg-[var(--bg-primary)] rounded-xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                <p className="text-gray-400">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{faq.question}</h3>
+                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
               </motion.div>
             ))}
           </div>
