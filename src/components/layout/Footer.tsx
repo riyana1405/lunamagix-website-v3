@@ -124,11 +124,11 @@ export function Footer() {
             <div className="lg:col-span-2">
               <Link href="/" className="flex items-center gap-3">
                 <Image 
-                  src="/logo-icon.png" 
+                  src="/logo-dark.png" 
                   alt="Lunamagix Logo" 
-                  width={60} 
-                  height={60}
-                  className="h-14 w-auto object-contain"
+                  width={64} 
+                  height={64}
+                  className="h-16 w-auto object-contain"
                   unoptimized
                 />
                 <div className="flex flex-col">

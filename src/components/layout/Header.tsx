@@ -38,11 +38,11 @@ export function Header() {
           className="flex items-center gap-3 group"
         >
           <Image 
-            src="/logo-icon.png" 
+            src="/logo-dark.png" 
             alt="Lunamagix Logo" 
-            width={50} 
-            height={50}
-            className="h-12 w-auto object-contain"
+            width={56} 
+            height={56}
+            className="h-14 w-auto object-contain"
             priority
             unoptimized
           />
