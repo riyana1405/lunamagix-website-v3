@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,20 +35,16 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2 group"
         >
-          {/* Logo Icon */}
-          <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--luna-purple)] to-[var(--azure-blue)] transition-transform group-hover:scale-105">
-            <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-            </svg>
-          </div>
-          <span className="text-lg font-bold text-[var(--text-primary)]">
-            Lunamagix
-          </span>
-          <span className="hidden sm:inline-flex text-xs font-medium text-[var(--text-tertiary)] bg-[var(--gray-100)] px-2 py-0.5 rounded-md">
-            Beta
-          </span>
+          <Image 
+            src="/logo-dark.png" 
+            alt="Lunamagix" 
+            width={140} 
+            height={40}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
