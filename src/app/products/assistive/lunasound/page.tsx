@@ -239,10 +239,9 @@ const faqs = [
 
 export default function LunaSoundPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-amber-950/20 to-gray-950">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/20 via-transparent to-transparent" />
+      <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -252,36 +251,36 @@ export default function LunaSoundPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white text-xs font-bold px-3 py-1 rounded-full">
                   ASSISTIVE
                 </span>
-                <span className="text-gray-400 text-sm">Hearing Enhancement</span>
+                <span className="text-[var(--text-secondary)] text-sm">Hearing Enhancement</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span className="text-white">Luna</span>
-                <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Sound</span>
+                <span className="text-[var(--text-primary)]">Luna</span>
+                <span className="text-[var(--luna-purple)]">Sound</span>
               </h1>
               
-              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+              <p className="text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
                 AI-powered hearing enhancement that uses deep learning to separate speech from noise—restoring clarity in the most challenging listening environments.
               </p>
               
-              <p className="text-gray-400 mb-8">
+              <p className="text-[var(--text-secondary)] mb-8">
                 Whether you have mild hearing loss or simply want better audio in noisy places, LunaSound's neural audio processing delivers unprecedented speech clarity.
               </p>
               
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/25"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-purple-500/25"
                 >
                   Request Demo
                   <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-white/20"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-gray-200"
                 >
                   View All Products
                 </Link>
@@ -423,7 +422,7 @@ export default function LunaSoundPage() {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-amber-900/50 to-orange-900/50">
+      <section className="py-20 bg-[var(--gradient-cta)]">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -433,13 +432,13 @@ export default function LunaSoundPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Rediscover Conversations
             </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
               Experience crystal-clear hearing in any environment with AI-powered audio processing.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-amber-900 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-white text-[var(--luna-purple)] font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
               >
                 Schedule Demo
                 <ArrowRight className="h-5 w-5" />

@@ -296,11 +296,9 @@ const faqs = [
 
 export default function LunaScribePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-violet-950/20 to-gray-950">
+    <div className="min-h-screen bg-[var(--gradient-hero)]">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900/20 via-transparent to-transparent" />
-        
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -309,22 +307,22 @@ export default function LunaScribePage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="bg-gradient-to-r from-violet-500 to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white text-xs font-bold px-3 py-1 rounded-full">
                   HEALTHCARE
                 </span>
-                <span className="text-gray-400 text-sm">Clinical Documentation</span>
+                <span className="text-[var(--luna-purple)] text-sm">Clinical Documentation</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span className="text-white">Luna</span>
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">Scribe</span>
+                <span className="text-[var(--text-primary)]">Luna</span>
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">Scribe</span>
               </h1>
               
-              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+              <p className="text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
                 Ambient AI documentation that listens to patient visits and automatically generates accurate, structured clinical notes—giving physicians their time back.
               </p>
               
-              <p className="text-gray-400 mb-8">
+              <p className="text-[var(--text-secondary)] mb-8">
                 LunaScribe understands medical conversations, creates EHR-ready documentation, and integrates seamlessly into clinical workflows without disrupting the physician-patient relationship.
               </p>
               
@@ -528,7 +526,7 @@ export default function LunaScribePage() {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-violet-900/50 to-purple-900/50">
+      <section className="py-20 bg-[var(--gradient-cta)]">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -538,13 +536,13 @@ export default function LunaScribePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Reclaim Your Time
             </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
               Join hundreds of physicians who have eliminated documentation burden with LunaScribe.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-violet-900 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-white text-[var(--luna-purple)] font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
               >
                 Request Demo
                 <ArrowRight className="h-5 w-5" />

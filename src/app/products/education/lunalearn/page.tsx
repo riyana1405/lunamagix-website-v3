@@ -117,25 +117,20 @@ export default function LunaLearnPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-950 py-20 sm:py-28">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-pink-500/20 blur-3xl" />
-        </div>
-
+      <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-28">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-center">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-white/10">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)]">
                 <BookOpen className="h-7 w-7 text-white" />
               </div>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
                 LunaLearn
               </h1>
-              <p className="mt-2 text-xl font-medium text-purple-200">
+              <p className="mt-2 text-xl font-medium text-[var(--luna-purple)]">
                 The Operating System for Modern Education
               </p>
-              <p className="mt-6 text-lg leading-relaxed text-purple-100/90">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
                 A single platform where every stakeholder — parents, teachers,
                 therapists, and administrators — sees what they need,
                 contributes what they know, and trusts that nothing falls
@@ -431,19 +426,19 @@ export default function LunaLearnPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-purple-900 to-indigo-900 py-16 sm:py-24">
+      <section className="bg-[var(--gradient-cta)] py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Ready to Transform Your Education Experience?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-purple-100/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
             Join the schools and education centers already using LunaLearn.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
+              variant="white"
               asChild
-              className="bg-white text-purple-900 hover:bg-purple-50"
             >
               <Link href="/contact?demo=true&product=lunalearn">
                 Schedule a Demo
