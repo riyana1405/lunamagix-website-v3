@@ -53,10 +53,10 @@ function RobotGuideDemo() {
   }, [isNavigating]);
   
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-blue-900/30 to-gray-900 rounded-2xl p-6 border border-blue-500/20">
+    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)]">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-          <Dog className="h-5 w-5 text-blue-400" />
+        <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
+          <Dog className="h-5 w-5 text-blue-500" />
           LunaGuide Navigation Demo
         </h3>
         <div className="flex items-center gap-2">
@@ -67,7 +67,7 @@ function RobotGuideDemo() {
       </div>
       
       {/* Navigation Map */}
-      <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-48 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl overflow-hidden mb-4">
         {/* Path line */}
         <svg className="absolute inset-0 w-full h-full">
           <path
@@ -171,24 +171,24 @@ function RobotGuideDemo() {
             </>
           )}
         </button>
-        <button className="px-4 py-3 bg-gray-800 rounded-xl text-gray-300 hover:bg-gray-700 transition-colors">
+        <button className="px-4 py-3 bg-[var(--bg-secondary)] rounded-xl text-[var(--text-secondary)] hover:bg-gray-200 transition-colors border border-[var(--border-default)]">
           <Volume2 className="h-5 w-5" />
         </button>
       </div>
       
       {/* Status */}
       <div className="mt-4 grid grid-cols-3 gap-3 text-center">
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-white">0.3 mi</p>
-          <p className="text-xs text-gray-400">Distance</p>
+        <div className="bg-white/80 rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-[var(--text-primary)]">0.3 mi</p>
+          <p className="text-xs text-[var(--text-secondary)]">Distance</p>
         </div>
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-white">5 min</p>
-          <p className="text-xs text-gray-400">ETA</p>
+        <div className="bg-white/80 rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-[var(--text-primary)]">5 min</p>
+          <p className="text-xs text-[var(--text-secondary)]">ETA</p>
         </div>
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-green-400">Clear</p>
-          <p className="text-xs text-gray-400">Path Status</p>
+        <div className="bg-white/80 rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-green-500">Clear</p>
+          <p className="text-xs text-[var(--text-secondary)]">Path Status</p>
         </div>
       </div>
     </div>
@@ -271,7 +271,7 @@ const faqs = [
 
 export default function LunaGuidePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
         
@@ -331,13 +331,13 @@ export default function LunaGuidePage() {
       </section>
       
       {/* Specs Bar */}
-      <section className="py-8 border-y border-blue-500/20 bg-blue-950/20">
+      <section className="py-8 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {specs.map((spec) => (
               <div key={spec.label} className="text-center">
-                <div className="text-lg md:text-xl font-bold text-white">{spec.value}</div>
-                <div className="text-xs text-gray-400">{spec.label}</div>
+                <div className="text-lg md:text-xl font-bold text-[var(--text-primary)]">{spec.value}</div>
+                <div className="text-xs text-[var(--text-secondary)]">{spec.label}</div>
               </div>
             ))}
           </div>
@@ -345,7 +345,7 @@ export default function LunaGuidePage() {
       </section>
       
       {/* Features Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-[var(--bg-primary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -353,10 +353,10 @@ export default function LunaGuidePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Advanced Mobility Technology
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               Sensor fusion and AI navigation for complete environmental awareness
             </p>
           </motion.div>
@@ -371,13 +371,13 @@ export default function LunaGuidePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-blue-900/20 rounded-2xl p-6 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-blue-400" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                  <p className="text-[var(--text-secondary)]">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -386,7 +386,7 @@ export default function LunaGuidePage() {
       </section>
       
       {/* Testimonials */}
-      <section className="py-20 bg-blue-950/10">
+      <section className="py-20 bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -394,7 +394,7 @@ export default function LunaGuidePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               User Experiences
             </h2>
           </motion.div>
@@ -407,12 +407,12 @@ export default function LunaGuidePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700"
+                className="bg-white rounded-2xl p-8 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <p className="text-gray-300 text-lg mb-6 italic">"{testimonial.quote}"</p>
+                <p className="text-[var(--text-secondary)] text-lg mb-6 italic">"{testimonial.quote}"</p>
                 <div>
-                  <p className="text-white font-semibold">{testimonial.author}</p>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  <p className="text-[var(--text-primary)] font-semibold">{testimonial.author}</p>
+                  <p className="text-[var(--text-secondary)] text-sm">{testimonial.role}</p>
                 </div>
               </motion.div>
             ))}
@@ -421,7 +421,7 @@ export default function LunaGuidePage() {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-20">
+      <section className="py-20 bg-[var(--bg-primary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -429,7 +429,7 @@ export default function LunaGuidePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -442,10 +442,10 @@ export default function LunaGuidePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+                className="bg-white rounded-xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                <p className="text-gray-400">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{faq.question}</h3>
+                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

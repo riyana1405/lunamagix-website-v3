@@ -22,13 +22,13 @@ function SensoryExperience() {
   const [intensity, setIntensity] = useState(50);
   
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-purple-900/30 to-gray-900 rounded-2xl p-6 border border-purple-500/20">
+    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-purple-400" />
+        <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
+          <Sparkles className="h-5 w-5 text-[var(--luna-purple)]" />
           Multi-Sensory Environment
         </h3>
-        <span className="text-xs text-purple-400 bg-purple-500/20 px-2 py-1 rounded">Interactive Demo</span>
+        <span className="text-xs text-[var(--luna-purple)] bg-[var(--luna-purple)]/10 px-2 py-1 rounded">Interactive Demo</span>
       </div>
       
       {/* Sense Selection */}
@@ -43,18 +43,18 @@ function SensoryExperience() {
               className={`p-3 rounded-xl transition-all duration-300 ${
                 isActive 
                   ? `bg-gradient-to-br ${sense.color} shadow-lg shadow-purple-500/25` 
-                  : 'bg-gray-800/50 hover:bg-gray-700/50'
+                  : 'bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)]'
               }`}
             >
-              <Icon className={`h-6 w-6 mx-auto mb-1 ${isActive ? 'text-white' : 'text-gray-400'}`} />
-              <span className={`text-xs ${isActive ? 'text-white' : 'text-gray-400'}`}>{sense.name}</span>
+              <Icon className={`h-6 w-6 mx-auto mb-1 ${isActive ? 'text-white' : 'text-[var(--text-secondary)]'}`} />
+              <span className={`text-xs ${isActive ? 'text-white' : 'text-[var(--text-secondary)]'}`}>{sense.name}</span>
             </button>
           );
         })}
       </div>
       
       {/* Sensory Visualization */}
-      <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-48 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] rounded-xl overflow-hidden mb-4 border border-[var(--border-default)]">
         {activeSense === 'visual' && (
           <motion.div 
             className="absolute inset-0"
@@ -134,22 +134,22 @@ function SensoryExperience() {
         )}
         
         {/* Learner Avatar */}
-        <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-black/50 px-3 py-2 rounded-lg">
+        <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg border border-[var(--border-default)] shadow-sm">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
             <span className="text-xs">🧒</span>
           </div>
           <div>
-            <p className="text-xs text-white font-medium">Learner Mode</p>
-            <p className="text-xs text-gray-400">{senses.find(s => s.id === activeSense)?.description}</p>
+            <p className="text-xs text-[var(--text-primary)] font-medium">Learner Mode</p>
+            <p className="text-xs text-[var(--text-secondary)]">{senses.find(s => s.id === activeSense)?.description}</p>
           </div>
         </div>
       </div>
       
       {/* Intensity Control */}
-      <div className="bg-gray-800/50 rounded-lg p-4">
+      <div className="bg-[var(--bg-secondary)] rounded-lg p-4 border border-[var(--border-default)]">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-gray-300">Sensory Intensity</span>
-          <span className="text-sm text-purple-400">{intensity}%</span>
+          <span className="text-sm text-[var(--text-secondary)]">Sensory Intensity</span>
+          <span className="text-sm text-[var(--luna-purple)]">{intensity}%</span>
         </div>
         <input
           type="range"
@@ -157,9 +157,9 @@ function SensoryExperience() {
           max="100"
           value={intensity}
           onChange={(e) => setIntensity(Number(e.target.value))}
-          className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-purple-500"
+          className="w-full h-2 bg-[var(--bg-tertiary)] rounded-lg appearance-none cursor-pointer accent-purple-500"
         />
-        <div className="flex justify-between text-xs text-gray-500 mt-1">
+        <div className="flex justify-between text-xs text-[var(--text-tertiary)] mt-1">
           <span>Calming</span>
           <span>Moderate</span>
           <span>Stimulating</span>

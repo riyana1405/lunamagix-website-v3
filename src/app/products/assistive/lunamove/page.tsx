@@ -33,9 +33,9 @@ function WheelchairDemo() {
   };
   
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-emerald-900/30 to-gray-900 rounded-2xl p-6 border border-emerald-500/20">
+    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)]">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+        <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
           <Armchair className="h-5 w-5 text-emerald-400" />
           LunaMove Control Center
         </h3>
@@ -59,7 +59,7 @@ function WheelchairDemo() {
             className={`p-3 rounded-xl transition-all duration-300 flex flex-col items-center ${
               mode === id 
                 ? 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white' 
-                : 'bg-gray-800/50 text-gray-400 hover:bg-gray-700/50'
+                : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-gray-200'
             }`}
           >
             <Icon className="h-5 w-5 mb-1" />
@@ -69,7 +69,7 @@ function WheelchairDemo() {
       </div>
       
       {/* Visualization */}
-      <div className="relative h-40 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden mb-4">
         {/* Wheelchair visualization */}
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
@@ -100,12 +100,12 @@ function WheelchairDemo() {
         
         {/* Status overlay */}
         <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center">
-          <div className="bg-black/50 px-3 py-1 rounded-lg">
-            <p className="text-xs text-emerald-400">{status}</p>
+          <div className="bg-white/80 px-3 py-1 rounded-lg shadow-sm">
+            <p className="text-xs text-emerald-600">{status}</p>
           </div>
-          <div className="bg-black/50 px-3 py-1 rounded-lg flex items-center gap-2">
-            <Gauge className="h-3 w-3 text-gray-400" />
-            <span className="text-xs text-white">{speed}%</span>
+          <div className="bg-white/80 px-3 py-1 rounded-lg shadow-sm flex items-center gap-2">
+            <Gauge className="h-3 w-3 text-[var(--text-secondary)]" />
+            <span className="text-xs text-[var(--text-primary)]">{speed}%</span>
           </div>
         </div>
         
@@ -115,9 +115,9 @@ function WheelchairDemo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="absolute top-3 left-1/2 -translate-x-1/2 bg-emerald-500/20 border border-emerald-500/30 px-4 py-2 rounded-full"
+            className="absolute top-3 left-1/2 -translate-x-1/2 bg-emerald-100 border border-emerald-300 px-4 py-2 rounded-full"
           >
-            <p className="text-sm text-emerald-300 flex items-center gap-2">
+            <p className="text-sm text-emerald-600 flex items-center gap-2">
               <Mic className="h-4 w-4" />
               "{command}"
             </p>
@@ -128,13 +128,13 @@ function WheelchairDemo() {
       {/* Voice Commands */}
       {mode === 'voice' && (
         <div className="space-y-2 mb-4">
-          <p className="text-xs text-gray-400 mb-2">Try a voice command:</p>
+          <p className="text-xs text-[var(--text-secondary)] mb-2">Try a voice command:</p>
           <div className="grid grid-cols-3 gap-2">
             {['Go to coffee shop', 'Take me home', 'Stop'].map((cmd) => (
               <button
                 key={cmd}
                 onClick={() => processCommand(cmd)}
-                className="px-3 py-2 bg-gray-800/50 hover:bg-emerald-500/20 rounded-lg text-xs text-gray-300 hover:text-emerald-300 transition-colors border border-gray-700 hover:border-emerald-500/30"
+                className="px-3 py-2 bg-white hover:bg-emerald-50 rounded-lg text-xs text-[var(--text-secondary)] hover:text-emerald-600 transition-colors border border-[var(--border-default)] hover:border-emerald-300"
               >
                 "{cmd}"
               </button>
@@ -144,9 +144,9 @@ function WheelchairDemo() {
       )}
       
       {/* Speed Control */}
-      <div className="bg-gray-800/50 rounded-lg p-4">
+      <div className="bg-white rounded-lg p-4 border border-[var(--border-default)]">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-gray-300">Speed Limit</span>
+          <span className="text-sm text-[var(--text-primary)]">Speed Limit</span>
           <span className="text-sm text-emerald-400">{speed}%</span>
         </div>
         <input
@@ -155,9 +155,9 @@ function WheelchairDemo() {
           max="100"
           value={speed}
           onChange={(e) => setSpeed(Number(e.target.value))}
-          className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"
         />
-        <div className="flex justify-between text-xs text-gray-500 mt-1">
+        <div className="flex justify-between text-xs text-[var(--text-secondary)] mt-1">
           <span>Safe</span>
           <span>Moderate</span>
           <span>Fast</span>
@@ -248,7 +248,7 @@ const faqs = [
 
 export default function LunaMovePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
         
@@ -308,13 +308,13 @@ export default function LunaMovePage() {
       </section>
       
       {/* Specs Bar */}
-      <section className="py-8 border-y border-emerald-500/20 bg-emerald-950/20">
+      <section className="py-8 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {specs.map((spec) => (
               <div key={spec.label} className="text-center">
-                <div className="text-lg md:text-xl font-bold text-white">{spec.value}</div>
-                <div className="text-xs text-gray-400">{spec.label}</div>
+                <div className="text-lg md:text-xl font-bold text-[var(--text-primary)]">{spec.value}</div>
+                <div className="text-xs text-[var(--text-secondary)]">{spec.label}</div>
               </div>
             ))}
           </div>
@@ -322,7 +322,7 @@ export default function LunaMovePage() {
       </section>
       
       {/* Features Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-[var(--bg-primary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -330,10 +330,10 @@ export default function LunaMovePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Intelligent Mobility Features
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               AI-powered navigation and safety for complete independence
             </p>
           </motion.div>
@@ -348,13 +348,13 @@ export default function LunaMovePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-emerald-900/20 rounded-2xl p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:border-emerald-300 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-emerald-400" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                  <p className="text-[var(--text-secondary)]">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -363,7 +363,7 @@ export default function LunaMovePage() {
       </section>
       
       {/* Use Cases */}
-      <section className="py-20 bg-emerald-950/10">
+      <section className="py-20 bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -371,7 +371,7 @@ export default function LunaMovePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Where LunaMove Excels
             </h2>
           </motion.div>
@@ -384,15 +384,15 @@ export default function LunaMovePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700"
+                className="bg-white rounded-2xl p-8 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-xl font-semibold text-white mb-3">{useCase.title}</h3>
-                <p className="text-gray-400 mb-4">{useCase.description}</p>
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">{useCase.title}</h3>
+                <p className="text-[var(--text-secondary)] mb-4">{useCase.description}</p>
                 <ul className="space-y-2">
                   {useCase.outcomes.map((outcome) => (
                     <li key={outcome} className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300 text-sm">{outcome}</span>
+                      <Check className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-[var(--text-secondary)] text-sm">{outcome}</span>
                     </li>
                   ))}
                 </ul>
@@ -403,7 +403,7 @@ export default function LunaMovePage() {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-20">
+      <section className="py-20 bg-[var(--bg-primary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -411,7 +411,7 @@ export default function LunaMovePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -424,10 +424,10 @@ export default function LunaMovePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+                className="bg-white rounded-xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                <p className="text-gray-400">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{faq.question}</h3>
+                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

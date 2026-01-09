@@ -22,9 +22,9 @@ function HearingDemo() {
   ];
   
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-amber-900/30 to-gray-900 rounded-2xl p-6 border border-amber-500/20">
+    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+        <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
           <Ear className="h-5 w-5 text-amber-400" />
           LunaSound Audio Processing
         </h3>
@@ -40,7 +40,7 @@ function HearingDemo() {
             className={`p-3 rounded-xl transition-all duration-300 flex flex-col items-center ${
               activeScene === id 
                 ? 'bg-gradient-to-br from-amber-500 to-orange-600 text-white' 
-                : 'bg-gray-800/50 text-gray-400 hover:bg-gray-700/50'
+                : 'bg-white text-[var(--text-secondary)] hover:bg-gray-50 border border-[var(--border-default)]'
             }`}
           >
             <Icon className="h-5 w-5 mb-1" />
@@ -50,7 +50,7 @@ function HearingDemo() {
       </div>
       
       {/* Audio Visualization */}
-      <div className="relative h-32 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden mb-4">
         <div className="absolute inset-0 flex items-center justify-center gap-1 px-4">
           {/* Background noise (reduced) */}
           <div className="flex items-end gap-0.5 opacity-30">
@@ -92,20 +92,20 @@ function HearingDemo() {
         </div>
         
         {/* Labels */}
-        <div className="absolute bottom-2 left-3 text-xs text-gray-500">Background (Reduced)</div>
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-amber-400">Speech (Enhanced)</div>
-        <div className="absolute bottom-2 right-3 text-xs text-gray-500">Background (Reduced)</div>
+        <div className="absolute bottom-2 left-3 text-xs text-[var(--text-tertiary)]">Background (Reduced)</div>
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-amber-600 font-medium">Speech (Enhanced)</div>
+        <div className="absolute bottom-2 right-3 text-xs text-[var(--text-tertiary)]">Background (Reduced)</div>
       </div>
       
       {/* Controls */}
       <div className="space-y-4">
-        <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="bg-white rounded-lg p-4 border border-[var(--border-default)]">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-300 flex items-center gap-2">
-              <VolumeX className="h-4 w-4 text-gray-400" />
+            <span className="text-sm text-[var(--text-secondary)] flex items-center gap-2">
+              <VolumeX className="h-4 w-4 text-[var(--text-tertiary)]" />
               Noise Reduction
             </span>
-            <span className="text-sm text-amber-400">{noiseReduction}%</span>
+            <span className="text-sm text-amber-600 font-medium">{noiseReduction}%</span>
           </div>
           <input
             type="range"
@@ -113,17 +113,17 @@ function HearingDemo() {
             max="100"
             value={noiseReduction}
             onChange={(e) => setNoiseReduction(Number(e.target.value))}
-            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
           />
         </div>
         
-        <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="bg-white rounded-lg p-4 border border-[var(--border-default)]">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-300 flex items-center gap-2">
-              <Mic className="h-4 w-4 text-gray-400" />
+            <span className="text-sm text-[var(--text-secondary)] flex items-center gap-2">
+              <Mic className="h-4 w-4 text-[var(--text-tertiary)]" />
               Speech Enhancement
             </span>
-            <span className="text-sm text-amber-400">{speechEnhancement}%</span>
+            <span className="text-sm text-amber-600 font-medium">{speechEnhancement}%</span>
           </div>
           <input
             type="range"
@@ -131,24 +131,24 @@ function HearingDemo() {
             max="100"
             value={speechEnhancement}
             onChange={(e) => setSpeechEnhancement(Number(e.target.value))}
-            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
           />
         </div>
       </div>
       
       {/* Status */}
       <div className="mt-4 grid grid-cols-3 gap-3 text-center">
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-white">-24dB</p>
-          <p className="text-xs text-gray-400">Noise Floor</p>
+        <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-[var(--text-primary)]">-24dB</p>
+          <p className="text-xs text-[var(--text-tertiary)]">Noise Floor</p>
         </div>
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-amber-400">+12dB</p>
-          <p className="text-xs text-gray-400">Speech Clarity</p>
+        <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-amber-600">+12dB</p>
+          <p className="text-xs text-[var(--text-tertiary)]">Speech Clarity</p>
         </div>
-        <div className="bg-gray-800/50 rounded-lg py-2">
-          <p className="text-lg font-bold text-green-400">Auto</p>
-          <p className="text-xs text-gray-400">Scene Mode</p>
+        <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-green-600">Auto</p>
+          <p className="text-xs text-[var(--text-tertiary)]">Scene Mode</p>
         </div>
       </div>
     </div>
@@ -299,13 +299,13 @@ export default function LunaSoundPage() {
       </section>
       
       {/* Specs Bar */}
-      <section className="py-8 border-y border-amber-500/20 bg-amber-950/20">
+      <section className="py-8 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {specs.map((spec) => (
               <div key={spec.label} className="text-center">
-                <div className="text-lg md:text-xl font-bold text-white">{spec.value}</div>
-                <div className="text-xs text-gray-400">{spec.label}</div>
+                <div className="text-lg md:text-xl font-bold text-[var(--text-primary)]">{spec.value}</div>
+                <div className="text-xs text-[var(--text-tertiary)]">{spec.label}</div>
               </div>
             ))}
           </div>
@@ -321,10 +321,10 @@ export default function LunaSoundPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Neural Audio Technology
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
               Deep learning that continuously improves your hearing experience
             </p>
           </motion.div>
@@ -339,13 +339,13 @@ export default function LunaSoundPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-amber-900/20 rounded-2xl p-6 border border-amber-500/20 hover:border-amber-500/40 transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4">
                     <Icon className="h-6 w-6 text-amber-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
+                  <p className="text-[var(--text-secondary)]">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -354,7 +354,7 @@ export default function LunaSoundPage() {
       </section>
       
       {/* Benefits */}
-      <section className="py-20 bg-amber-950/10">
+      <section className="py-20 bg-[var(--bg-secondary)]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -362,7 +362,7 @@ export default function LunaSoundPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Real-World Performance
             </h2>
           </motion.div>
@@ -375,14 +375,14 @@ export default function LunaSoundPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700 text-center"
+                className="bg-white rounded-2xl p-8 border border-[var(--border-default)] shadow-[var(--shadow-card)] text-center"
               >
                 <div className="text-4xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent mb-2">
                   {benefit.stat}
                 </div>
-                <p className="text-gray-400 text-sm mb-4">{benefit.statLabel}</p>
-                <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
-                <p className="text-gray-400">{benefit.description}</p>
+                <p className="text-[var(--text-tertiary)] text-sm mb-4">{benefit.statLabel}</p>
+                <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-3">{benefit.title}</h3>
+                <p className="text-[var(--text-secondary)]">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -398,7 +398,7 @@ export default function LunaSoundPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -411,10 +411,10 @@ export default function LunaSoundPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900/50 rounded-xl p-6 border border-gray-800"
+                className="bg-white rounded-xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                <p className="text-gray-400">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{faq.question}</h3>
+                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
               </motion.div>
             ))}
           </div>

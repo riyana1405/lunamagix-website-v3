@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-white font-sans text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100`}
+        className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-[var(--bg-primary)] font-sans text-[var(--text-primary)] antialiased`}
       >
         <a
           href="#main-content"

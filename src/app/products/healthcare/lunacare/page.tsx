@@ -321,7 +321,7 @@ export default function LunaCarePage() {
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-white/20"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
                 >
                   View All Products
                 </Link>

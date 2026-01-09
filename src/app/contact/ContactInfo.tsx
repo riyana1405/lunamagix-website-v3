@@ -104,7 +104,7 @@ export function ContactInfo() {
             href={siteConfig.links.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--text-primary)] px-4 py-2 text-sm font-medium text-white transition-colors hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple)] px-4 py-2 text-sm font-medium text-white transition-colors hover:opacity-90"
           >
             Twitter/X
           </a>
