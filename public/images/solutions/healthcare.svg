@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="healthGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ECFDF5"/>
+      <stop offset="100%" style="stop-color:#D1FAE5"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="url(#bgGrad4)"/>
+  <!-- Hospital Building -->
+  <rect x="140" y="100" width="120" height="150" rx="4" fill="url(#healthGrad)"/>
+  <rect x="180" y="180" width="40" height="70" rx="2" fill="#065F46"/>
+  <!-- Cross Symbol -->
+  <rect x="185" y="115" width="30" height="10" rx="2" fill="white"/>
+  <rect x="195" y="105" width="10" height="30" rx="2" fill="white"/>
+  <!-- Windows -->
+  <rect x="155" y="130" width="20" height="20" rx="2" fill="#A7F3D0"/>
+  <rect x="225" y="130" width="20" height="20" rx="2" fill="#A7F3D0"/>
+  <rect x="155" y="160" width="20" height="15" rx="2" fill="#A7F3D0"/>
+  <rect x="225" y="160" width="20" height="15" rx="2" fill="#A7F3D0"/>
+  <!-- Stethoscope -->
+  <path d="M70 120 Q50 140 50 170 Q50 200 80 200 Q110 200 110 170 L110 150" stroke="#10B981" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="80" cy="200" r="10" fill="#059669"/>
+  <circle cx="70" cy="115" r="8" fill="#6EE7B7"/>
+  <circle cx="110" cy="145" r="8" fill="#6EE7B7"/>
+  <!-- Heart Monitor -->
+  <rect x="290" y="120" width="80" height="60" rx="8" fill="white" stroke="#10B981" stroke-width="2"/>
+  <path d="M300 150 L315 150 L320 135 L330 165 L340 140 L345 150 L360 150" stroke="#EF4444" stroke-width="2" fill="none"/>
+  <!-- AI Brain -->
+  <circle cx="330" cy="220" r="30" fill="#10B981" opacity="0.2"/>
+  <ellipse cx="330" cy="215" rx="20" ry="18" fill="#10B981" opacity="0.5"/>
+  <path d="M320 210 Q330 200 340 210 Q330 220 320 210" fill="white" opacity="0.8"/>
+  <!-- DNA Helix -->
+  <path d="M50 220 Q60 230 70 220 Q80 210 90 220" stroke="#8B5CF6" stroke-width="3" fill="none"/>
+  <path d="M50 230 Q60 220 70 230 Q80 240 90 230" stroke="#8B5CF6" stroke-width="3" fill="none"/>
+  <circle cx="60" cy="225" r="3" fill="#8B5CF6"/>
+  <circle cx="80" cy="225" r="3" fill="#8B5CF6"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="specialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F3FF"/>
+      <stop offset="100%" style="stop-color:#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="url(#bgGrad2)"/>
+  <!-- Central Heart with Accessibility -->
+  <path d="M200 220 C150 170 120 130 150 100 C180 70 200 90 200 110 C200 90 220 70 250 100 C280 130 250 170 200 220Z" fill="url(#specialGrad)"/>
+  <!-- Accessibility Symbol -->
+  <circle cx="200" cy="140" r="35" fill="white" opacity="0.9"/>
+  <circle cx="200" cy="125" r="8" fill="#7C3AED"/>
+  <path d="M200 135 L200 160 M185 145 L215 145 M190 175 L200 160 L210 175" stroke="#7C3AED" stroke-width="4" stroke-linecap="round"/>
+  <!-- Brain/Learning Elements -->
+  <ellipse cx="80" cy="100" rx="30" ry="25" fill="#8B5CF6" opacity="0.3"/>
+  <path d="M70 95 Q80 85 90 95 Q80 105 70 95" fill="#8B5CF6"/>
+  <ellipse cx="320" cy="100" rx="30" ry="25" fill="#8B5CF6" opacity="0.3"/>
+  <path d="M310 95 Q320 85 330 95 Q320 105 310 95" fill="#8B5CF6"/>
+  <!-- Stars/Sparkles for Achievement -->
+  <polygon points="60,180 63,190 73,190 65,196 68,206 60,200 52,206 55,196 47,190 57,190" fill="#F59E0B"/>
+  <polygon points="340,180 343,190 353,190 345,196 348,206 340,200 332,206 335,196 327,190 337,190" fill="#F59E0B"/>
+  <!-- Connecting Lines (neural) -->
+  <circle cx="140" cy="200" r="6" fill="#8B5CF6" opacity="0.5"/>
+  <circle cx="260" cy="200" r="6" fill="#8B5CF6" opacity="0.5"/>
+  <line x1="146" y1="200" x2="190" y2="170" stroke="#8B5CF6" stroke-width="2" opacity="0.3"/>
+  <line x1="254" y1="200" x2="210" y2="170" stroke="#8B5CF6" stroke-width="2" opacity="0.3"/>
+</svg>

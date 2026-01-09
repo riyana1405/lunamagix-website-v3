@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="parentsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F43F5E"/>
+      <stop offset="100%" style="stop-color:#EC4899"/>
+    </linearGradient>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF1F2"/>
+      <stop offset="100%" style="stop-color:#FCE7F3"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="url(#bgGrad5)"/>
+  <!-- House -->
+  <polygon points="200,60 100,130 300,130" fill="url(#parentsGrad)"/>
+  <rect x="120" y="130" width="160" height="120" fill="#FDA4AF"/>
+  <rect x="175" y="180" width="50" height="70" rx="2" fill="#9D174D"/>
+  <circle cx="215" cy="220" r="4" fill="#F9A8D4"/>
+  <!-- Windows -->
+  <rect x="135" y="150" width="30" height="30" rx="2" fill="#FFF1F2"/>
+  <line x1="150" y1="150" x2="150" y2="180" stroke="#F43F5E" stroke-width="2"/>
+  <line x1="135" y1="165" x2="165" y2="165" stroke="#F43F5E" stroke-width="2"/>
+  <rect x="235" y="150" width="30" height="30" rx="2" fill="#FFF1F2"/>
+  <line x1="250" y1="150" x2="250" y2="180" stroke="#F43F5E" stroke-width="2"/>
+  <line x1="235" y1="165" x2="265" y2="165" stroke="#F43F5E" stroke-width="2"/>
+  <!-- Parent Figure -->
+  <circle cx="70" cy="160" r="18" fill="#F43F5E"/>
+  <ellipse cx="70" cy="210" rx="20" ry="30" fill="#F43F5E"/>
+  <!-- Child Figure -->
+  <circle cx="70" cy="170" r="10" fill="#F9A8D4" transform="translate(20, 30)"/>
+  <ellipse cx="90" cy="225" rx="12" ry="20" fill="#F9A8D4"/>
+  <!-- Connection/Device -->
+  <rect x="300" y="140" width="60" height="80" rx="8" fill="white" stroke="#F43F5E" stroke-width="2"/>
+  <rect x="310" y="155" width="40" height="35" rx="4" fill="#FCE7F3"/>
+  <circle cx="330" cy="205" r="6" fill="#F43F5E"/>
+  <!-- Progress Chart -->
+  <rect x="308" y="160" width="8" height="20" fill="#10B981"/>
+  <rect x="320" y="165" width="8" height="15" fill="#F59E0B"/>
+  <rect x="332" y="155" width="8" height="25" fill="#8B5CF6"/>
+  <!-- Heart -->
+  <path d="M200 95 C185 80 165 85 165 100 C165 115 200 130 200 130 C200 130 235 115 235 100 C235 85 215 80 200 95Z" fill="white" opacity="0.9"/>
+  <!-- Stars -->
+  <polygon points="340,100 342,106 348,106 343,110 345,116 340,112 335,116 337,110 332,106 338,106" fill="#F59E0B"/>
+</svg>

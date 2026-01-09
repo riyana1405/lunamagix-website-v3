@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { 
   GraduationCap, 
@@ -32,6 +33,7 @@ const solutions = [
     color: "from-blue-500 to-indigo-600",
     bgColor: "bg-blue-50",
     iconColor: "text-blue-600",
+    image: "/images/solutions/schools.svg",
     products: ["LunaLearn", "LunaViz 3D", "LunaWatch", "LunaFit"],
     benefits: [
       "Personalized learning with AI-adapted content",
@@ -55,6 +57,7 @@ const solutions = [
     color: "from-purple-500 to-violet-600",
     bgColor: "bg-purple-50",
     iconColor: "text-purple-600",
+    image: "/images/solutions/special-education.svg",
     products: ["LunaLearn IEP", "LunaSense", "LunaCare"],
     benefits: [
       "Automatic IEP goal tracking with insights",
@@ -78,6 +81,7 @@ const solutions = [
     color: "from-amber-500 to-orange-600",
     bgColor: "bg-amber-50",
     iconColor: "text-amber-600",
+    image: "/images/solutions/coaching.svg",
     products: ["LunaLearn", "LunaViz 3D", "LunaWatch"],
     benefits: [
       "Competitive exam prep (JEE, NEET, SAT, GRE)",
@@ -101,6 +105,7 @@ const solutions = [
     color: "from-green-500 to-emerald-600",
     bgColor: "bg-green-50",
     iconColor: "text-green-600",
+    image: "/images/solutions/healthcare.svg",
     products: ["LunaCare", "LunaScan", "LunaScribe"],
     benefits: [
       "Save 2+ hours daily on documentation",
@@ -124,6 +129,7 @@ const solutions = [
     color: "from-rose-500 to-pink-600",
     bgColor: "bg-rose-50",
     iconColor: "text-rose-600",
+    image: "/images/solutions/parents.svg",
     products: ["LunaLearn", "Parent Portal", "Progress Reports"],
     benefits: [
       "Real-time progress visibility",
@@ -147,6 +153,7 @@ const solutions = [
     color: "from-teal-500 to-cyan-600",
     bgColor: "bg-teal-50",
     iconColor: "text-teal-600",
+    image: "/images/solutions/sports.svg",
     products: ["LunaFit", "LunaMove", "Performance Analytics"],
     benefits: [
       "AI biomechanics movement analysis",
@@ -394,17 +401,28 @@ export default function SolutionsPage() {
                     </div>
                   </div>
 
-                  {/* Visual Card */}
+                  {/* Visual Card with Image */}
                   <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.95 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className={`relative rounded-2xl bg-white p-8 shadow-[var(--shadow-lg)] border border-[var(--border-light)] hover:shadow-[var(--shadow-xl)] transition-all`}
+                      className={`relative rounded-2xl bg-white p-6 shadow-[var(--shadow-lg)] border border-[var(--border-light)] hover:shadow-[var(--shadow-xl)] transition-all overflow-hidden`}
                     >
                       {/* Accent gradient bar at top */}
                       <div className={`absolute top-0 left-0 right-0 h-1.5 rounded-t-2xl bg-gradient-to-r ${solution.color}`} />
+                      
+                      {/* Solution Themed Image */}
+                      <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+                        <Image 
+                          src={solution.image}
+                          alt={`${solution.title} illustration`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+
                       <div className="relative">
                         {/* Audiences */}
                         <p className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-4">
@@ -427,7 +445,7 @@ export default function SolutionsPage() {
                         </div>
                         
                         {/* Stats */}
-                        <div className="mt-8 pt-6 border-t border-[var(--border-light)]">
+                        <div className="mt-6 pt-6 border-t border-[var(--border-light)]">
                           <div className="grid grid-cols-2 gap-4">
                             <div>
                               <p className="text-3xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">98%</p>
