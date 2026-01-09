@@ -322,18 +322,18 @@ export default function LunaFitPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--gradient-cta)] py-16 sm:py-24">
+      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Start Your Fitness Journey Today
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
             Experience AI coaching that adapts to you.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              variant="white"
+              
               asChild
             >
               <Link href="/contact?demo=true&product=lunafit">

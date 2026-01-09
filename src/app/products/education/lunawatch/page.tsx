@@ -305,18 +305,18 @@ export default function LunaWatchPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--gradient-cta)] py-16 sm:py-24">
+      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Protect What Matters Most
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
             Give your community the security they deserve with AI-powered protection.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              variant="white"
+              
               asChild
             >
               <Link href="/contact?demo=true&product=lunawatch">

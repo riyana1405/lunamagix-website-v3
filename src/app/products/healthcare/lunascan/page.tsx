@@ -286,7 +286,7 @@ export default function LunaScanPage() {
         <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--luna-purple)]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-80 h-80 bg-[var(--azure-blue)]/5 rounded-full blur-3xl" />
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="mx-auto max-w-[1400px] px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -343,7 +343,7 @@ export default function LunaScanPage() {
       
       {/* Stats Section */}
       <section className="py-12 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
@@ -366,7 +366,7 @@ export default function LunaScanPage() {
       
       {/* Features Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-[1400px] px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -407,7 +407,7 @@ export default function LunaScanPage() {
       
       {/* Applications */}
       <section className="py-20 bg-[var(--bg-secondary)]">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-[1400px] px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -449,7 +449,7 @@ export default function LunaScanPage() {
       
       {/* FAQ Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-[1400px] px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -480,30 +480,30 @@ export default function LunaScanPage() {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-[var(--gradient-cta)]">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
+        <div className="mx-auto max-w-[1400px] px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Enhance Your Radiology Workflow
             </h2>
-            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
               See how LunaScan can improve diagnostic accuracy and efficiency at your institution.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-[var(--luna-purple)] font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-all duration-300"
               >
                 Request Demo
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/partner"
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-transparent border border-[var(--border-default)] text-[var(--text-primary)] bg-white font-semibold px-8 py-4 rounded-xl hover:bg-[var(--bg-secondary)] transition-all duration-300"
               >
                 Healthcare Partnership
               </Link>
