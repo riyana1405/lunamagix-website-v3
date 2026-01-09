@@ -274,6 +274,11 @@ export default function LunaGuidePage() {
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
+        </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -283,15 +288,16 @@ export default function LunaGuidePage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white text-xs font-bold px-3 py-1 rounded-full">
-                  ASSISTIVE
+                <span className="bg-[var(--luna-purple-lighter)] text-[var(--luna-purple)] px-4 py-2 rounded-full text-sm font-semibold border border-[var(--luna-purple)]/10">
+                  Assistive Technology
                 </span>
-                <span className="text-[var(--text-secondary)] text-sm">Vision Assistance</span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span className="text-[var(--text-primary)]">Luna</span>
-                <span className="text-[var(--luna-purple)]">Guide</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--text-primary)]">
+                Navigate with{' '}
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">
+                  Confidence
+                </span>
               </h1>
               
               <p className="text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
@@ -312,7 +318,7 @@ export default function LunaGuidePage() {
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-gray-200"
+                  className="inline-flex items-center gap-2 bg-transparent hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-[var(--border-default)]"
                 >
                   View All Products
                 </Link>

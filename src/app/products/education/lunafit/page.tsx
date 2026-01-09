@@ -138,16 +138,21 @@ export default function LunaFitPage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-28">
+        {/* Subtle blur circles */}
+        <div className="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-[var(--luna-purple)]/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-[var(--azure-blue)]/5 blur-3xl" />
+        
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-center">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)]">
-                <Activity className="h-7 w-7 text-white" />
-              </div>
+              <span className="inline-flex w-fit items-center gap-2 bg-[var(--luna-purple-lighter)] text-[var(--luna-purple)] px-4 py-2 rounded-full text-sm font-semibold border border-[var(--luna-purple)]/10">
+                <Activity className="h-4 w-4" />
+                AI Sports & Wellness Coach
+              </span>
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-                LunaFit
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">LunaFit</span>
               </h1>
-              <p className="mt-2 text-xl font-medium text-[var(--luna-purple)]">
+              <p className="mt-2 text-xl font-medium text-[var(--text-primary)]">
                 Your Personal AI Coach, Always Watching, Always Guiding
               </p>
               <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
@@ -162,7 +167,7 @@ export default function LunaFitPage() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="secondary" size="lg" asChild>
+                <Button size="lg" asChild className="border-[var(--border-default)] text-[var(--text-primary)] bg-white hover:bg-[var(--bg-secondary)]">
                   <Link href="#features">See Features</Link>
                 </Button>
               </div>

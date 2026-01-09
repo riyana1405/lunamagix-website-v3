@@ -279,9 +279,13 @@ const faqs = [
 
 export default function LunaScanPage() {
   return (
-    <div className="min-h-screen bg-[var(--gradient-hero)]">
+    <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
+        {/* Subtle blur circles */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[var(--luna-purple)]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-80 h-80 bg-[var(--azure-blue)]/5 rounded-full blur-3xl" />
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -290,7 +294,7 @@ export default function LunaScanPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-[var(--luna-purple-lighter)] text-[var(--luna-purple)] px-4 py-2 rounded-full text-sm font-semibold border border-[var(--luna-purple)]/10">
                   HEALTHCARE
                 </span>
                 <span className="text-[var(--luna-purple)] text-sm">Medical Imaging AI</span>
@@ -312,14 +316,14 @@ export default function LunaScanPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-cyan-500/25"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue)] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[var(--luna-purple)]/25"
                 >
                   Request Demo
                   <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-white/20"
+                  className="inline-flex items-center gap-2 border-[var(--border-default)] text-[var(--text-primary)] bg-white hover:bg-[var(--bg-secondary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border"
                 >
                   View All Products
                 </Link>

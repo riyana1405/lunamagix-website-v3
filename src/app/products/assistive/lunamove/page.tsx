@@ -251,6 +251,9 @@ export default function LunaMovePage() {
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
+        {/* Subtle blur circles */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--luna-purple)]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-[var(--azure-blue)]/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -260,15 +263,13 @@ export default function LunaMovePage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white text-xs font-bold px-3 py-1 rounded-full">
-                  ASSISTIVE
+                <span className="bg-[var(--luna-purple-lighter)] text-[var(--luna-purple)] px-4 py-2 rounded-full text-sm font-semibold border border-[var(--luna-purple)]/10">
+                  ASSISTIVE MOBILITY
                 </span>
-                <span className="text-[var(--text-secondary)] text-sm">Mobility</span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span className="text-[var(--text-primary)]">Luna</span>
-                <span className="text-[var(--luna-purple)]">Move</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--text-primary)]">
+                Luna<span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">Move</span>
               </h1>
               
               <p className="text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
@@ -289,7 +290,7 @@ export default function LunaMovePage() {
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-gray-200"
+                  className="inline-flex items-center gap-2 border-[var(--border-default)] text-[var(--text-primary)] bg-white hover:bg-[var(--bg-secondary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border"
                 >
                   View All Products
                 </Link>
