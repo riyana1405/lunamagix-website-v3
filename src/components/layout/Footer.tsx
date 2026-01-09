@@ -43,21 +43,23 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: siteConfig.links.linkedin, label: "LinkedIn", color: "hover:bg-[#0A66C2]" },
-  { icon: Twitter, href: siteConfig.links.twitter, label: "Twitter", color: "hover:bg-[#1DA1F2]" },
-  { icon: Youtube, href: "#", label: "YouTube", color: "hover:bg-[#FF0000]" },
-  { icon: Github, href: "#", label: "GitHub", color: "hover:bg-[#333]" },
+  { icon: Linkedin, href: siteConfig.links.linkedin, label: "LinkedIn" },
+  { icon: Twitter, href: siteConfig.links.twitter, label: "Twitter" },
+  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Github, href: "#", label: "GitHub" },
 ];
 
 export function Footer() {
   return (
-    <footer>
+    <footer className="bg-[var(--gradient-hero)]">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -left-1/4 top-0 h-[800px] w-[800px] rounded-full bg-[var(--luna-purple)]/5 blur-[150px]" />
+        <div className="absolute -right-1/4 bottom-0 h-[800px] w-[800px] rounded-full bg-[var(--azure-blue)]/5 blur-[150px]" />
+      </div>
+
       {/* CTA Section */}
-      <section className="relative overflow-hidden py-20 sm:py-24 bg-[var(--gradient-hero)]">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
-        </div>
+      <section className="relative py-20 sm:py-24">
         <div className="relative mx-auto max-w-4xl px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,7 +94,7 @@ export function Footer() {
                 variant="outline" 
                 size="lg" 
                 asChild
-                className="group border-[var(--luna-purple)]/20 bg-white/80 text-[var(--text-primary)] hover:bg-white hover:border-[var(--luna-purple)]/40"
+                className="group border-[var(--border-default)] bg-white text-[var(--text-primary)] hover:bg-[var(--gray-50)] hover:border-[var(--luna-purple)]/30"
               >
                 <Link href="/assessment">
                   Try Free Assessment
@@ -122,10 +124,10 @@ export function Footer() {
       </section>
 
       {/* Main Footer */}
-      <div className="bg-gradient-to-b from-[var(--gray-900)] to-[#1a1a2e] text-white">
+      <div className="relative border-t border-[var(--border-light)]">
         <div className="mx-auto max-w-[1400px] px-6 py-16 lg:py-20">
           {/* Top Section - Logo & Newsletter */}
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 pb-12 border-b border-white/10">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 pb-12 border-b border-[var(--border-light)]">
             {/* Brand */}
             <div>
               <Link href="/" className="inline-flex items-center gap-3">
@@ -134,14 +136,14 @@ export function Footer() {
                   alt="Lunamagix Logo" 
                   width={56} 
                   height={56}
-                  className="h-14 w-auto object-contain brightness-0 invert"
+                  className="h-14 w-auto object-contain"
                   unoptimized
                 />
-                <span className="text-2xl font-bold text-white tracking-wide">
+                <span className="text-2xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent tracking-wide">
                   LUNAMAGIX
                 </span>
               </Link>
-              <p className="mt-4 max-w-md text-base leading-relaxed text-white/70">
+              <p className="mt-4 max-w-md text-base leading-relaxed text-[var(--text-secondary)]">
                 Where cutting-edge AI meets compassionate innovation — empowering
                 every learner, supporting every life.
               </p>
@@ -153,7 +155,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white/80 transition-all duration-300 hover:text-white hover:scale-110 ${social.color}`}
+                    className="flex h-11 w-11 items-center justify-center rounded-xl bg-white border border-[var(--border-default)] text-[var(--text-tertiary)] shadow-[var(--shadow-xs)] transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-[var(--luna-purple)] hover:to-[var(--azure-blue)] hover:border-transparent hover:shadow-[var(--shadow-md)] hover:scale-105"
                     aria-label={social.label}
                   >
                     <social.icon className="h-5 w-5" />
@@ -164,22 +166,22 @@ export function Footer() {
 
             {/* Newsletter */}
             <div className="lg:text-right">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-[var(--text-primary)]">
                 Stay Updated
               </h3>
-              <p className="mt-2 text-sm text-white/60">
+              <p className="mt-2 text-sm text-[var(--text-secondary)]">
                 Get monthly insights on inclusive education technology.
               </p>
               <form className="mt-4 flex flex-col sm:flex-row gap-3 lg:justify-end">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="min-h-[48px] w-full sm:w-72 rounded-xl border border-white/20 bg-white/10 px-4 text-sm text-white placeholder:text-white/50 focus:border-[var(--azure-blue)] focus:outline-none focus:ring-2 focus:ring-[var(--azure-blue)]/30 transition-all backdrop-blur-sm"
+                  className="min-h-[48px] w-full sm:w-72 rounded-xl border border-[var(--border-default)] bg-white px-4 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] focus:border-[var(--luna-purple)] focus:outline-none focus:ring-2 focus:ring-[var(--luna-purple)]/20 transition-all shadow-[var(--shadow-xs)]"
                   aria-label="Email for newsletter"
                 />
                 <button
                   type="submit"
-                  className="min-h-[48px] inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] px-6 text-sm font-semibold text-white transition-all hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] hover:shadow-lg hover:shadow-[var(--luna-purple)]/25"
+                  className="min-h-[48px] inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] px-6 text-sm font-semibold text-white transition-all hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] hover:shadow-[var(--shadow-button-hover)]"
                 >
                   Subscribe
                   <Send className="h-4 w-4" />
@@ -192,7 +194,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 py-12 md:grid-cols-4 lg:grid-cols-5">
             {/* Products */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90 mb-5">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)] mb-5">
                 Products
               </h3>
               <ul className="space-y-3">
@@ -200,7 +202,7 @@ export function Footer() {
                   <li key={link.title}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 transition-colors hover:text-white hover:translate-x-1 inline-block"
+                      className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--luna-purple)]"
                     >
                       {link.title}
                     </Link>
@@ -211,7 +213,7 @@ export function Footer() {
 
             {/* Solutions */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90 mb-5">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)] mb-5">
                 Solutions
               </h3>
               <ul className="space-y-3">
@@ -219,7 +221,7 @@ export function Footer() {
                   <li key={link.title}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 transition-colors hover:text-white hover:translate-x-1 inline-block"
+                      className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--luna-purple)]"
                     >
                       {link.title}
                     </Link>
@@ -230,7 +232,7 @@ export function Footer() {
 
             {/* Company */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90 mb-5">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)] mb-5">
                 Company
               </h3>
               <ul className="space-y-3">
@@ -238,14 +240,14 @@ export function Footer() {
                   <li key={link.title}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 transition-colors hover:text-white hover:translate-x-1 inline-block"
+                      className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--luna-purple)]"
                     >
                       {link.title}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90 mb-5 mt-8">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)] mb-5 mt-8">
                 Resources
               </h3>
               <ul className="space-y-3">
@@ -253,7 +255,7 @@ export function Footer() {
                   <li key={link.title}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 transition-colors hover:text-white hover:translate-x-1 inline-block"
+                      className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--luna-purple)]"
                     >
                       {link.title}
                     </Link>
@@ -264,7 +266,7 @@ export function Footer() {
 
             {/* Legal */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90 mb-5">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)] mb-5">
                 Legal
               </h3>
               <ul className="space-y-3">
@@ -272,7 +274,7 @@ export function Footer() {
                   <li key={link.title}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/60 transition-colors hover:text-white hover:translate-x-1 inline-block"
+                      className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--luna-purple)]"
                     >
                       {link.title}
                     </Link>
@@ -283,16 +285,16 @@ export function Footer() {
 
             {/* Contact */}
             <div className="col-span-2 md:col-span-4 lg:col-span-1">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-white/90 mb-5">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--text-primary)] mb-5">
                 Contact Us
               </h3>
               <ul className="space-y-4">
                 <li>
                   <a 
                     href={`mailto:${siteConfig.email}`}
-                    className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors group"
+                    className="flex items-center gap-3 text-sm text-[var(--text-secondary)] hover:text-[var(--luna-purple)] transition-colors group"
                   >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 group-hover:bg-[var(--luna-purple)] transition-colors">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--luna-purple-lighter)] text-[var(--luna-purple)] group-hover:bg-[var(--luna-purple)] group-hover:text-white transition-colors">
                       <Mail className="h-4 w-4" />
                     </span>
                     {siteConfig.email}
@@ -301,17 +303,17 @@ export function Footer() {
                 <li>
                   <a 
                     href={`tel:${siteConfig.phone?.replace(/\s/g, '')}`}
-                    className="flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors group"
+                    className="flex items-center gap-3 text-sm text-[var(--text-secondary)] hover:text-[var(--luna-purple)] transition-colors group"
                   >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 group-hover:bg-[var(--luna-purple)] transition-colors">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--azure-blue-lighter)] text-[var(--azure-blue)] group-hover:bg-[var(--azure-blue)] group-hover:text-white transition-colors">
                       <Phone className="h-4 w-4" />
                     </span>
                     {siteConfig.phone}
                   </a>
                 </li>
                 <li>
-                  <div className="flex items-start gap-3 text-sm text-white/60">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 shrink-0">
+                  <div className="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--accent-teal-lighter)] text-[var(--accent-teal)] shrink-0">
                       <MapPin className="h-4 w-4" />
                     </span>
                     <address className="not-italic leading-relaxed">
@@ -325,11 +327,11 @@ export function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
-            <p className="text-sm text-white/50">
+          <div className="flex flex-col items-center justify-between gap-4 border-t border-[var(--border-light)] pt-8 md:flex-row">
+            <p className="text-sm text-[var(--text-tertiary)]">
               © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
             </p>
-            <p className="text-sm text-white/50 flex items-center gap-2">
+            <p className="text-sm text-[var(--text-tertiary)] flex items-center gap-2">
               Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> in India for the World
             </p>
           </div>
