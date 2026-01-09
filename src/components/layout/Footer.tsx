@@ -131,14 +131,9 @@ export function Footer() {
                   className="h-16 w-auto object-contain"
                   unoptimized
                 />
-                <div className="flex flex-col">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent tracking-wide">
-                    LUNAMAGIX
-                  </span>
-                  <span className="text-xs font-medium text-[var(--text-tertiary)] tracking-wider">
-                    SMART THERAPEUTIC INNOVATIONS
-                  </span>
-                </div>
+                <span className="text-2xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent tracking-wide">
+                  LUNAMAGIX
+                </span>
               </Link>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--text-secondary)]">
                 Where cutting-edge AI meets compassionate innovation — empowering

@@ -46,14 +46,9 @@ export function Header() {
             priority
             unoptimized
           />
-          <div className="flex flex-col">
-            <span className="text-xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent tracking-wide">
-              LUNAMAGIX
-            </span>
-            <span className="text-[10px] font-medium text-[var(--text-tertiary)] tracking-wider hidden sm:block">
-              SMART THERAPEUTIC INNOVATIONS
-            </span>
-          </div>
+          <span className="text-xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent tracking-wide">
+            LUNAMAGIX
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
