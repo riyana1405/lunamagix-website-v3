@@ -159,10 +159,10 @@ export function Footer() {
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-[var(--luna-purple)] shrink-0" />
                   <a
-                    href="tel:+911234567890"
+                    href={`tel:${siteConfig.phone?.replace(/\s/g, '')}`}
                     className="text-sm text-[var(--text-secondary)] hover:text-[var(--luna-purple)] transition-colors"
                   >
-                    +91 123 456 7890
+                    {siteConfig.phone}
                   </a>
                 </div>
               </div>

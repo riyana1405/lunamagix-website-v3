@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Clock, MessageCircle, Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export function ContactInfo() {
@@ -33,6 +33,24 @@ export function ContactInfo() {
               className="mt-1 text-[var(--luna-purple)] hover:underline"
             >
               {siteConfig.email}
+            </a>
+          </div>
+        </div>
+
+        {/* Phone */}
+        <div className="flex gap-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[var(--radius-lg)] bg-[var(--luna-purple)]/10">
+            <Phone className="h-6 w-6 text-[var(--luna-purple)]" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-[var(--text-primary)]">
+              Phone
+            </h3>
+            <a
+              href={`tel:${siteConfig.phone?.replace(/\s/g, '')}`}
+              className="mt-1 text-[var(--luna-purple)] hover:underline"
+            >
+              {siteConfig.phone}
             </a>
           </div>
         </div>

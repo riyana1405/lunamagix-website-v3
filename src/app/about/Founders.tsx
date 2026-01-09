@@ -69,7 +69,9 @@ export function Founders() {
                   {founder.description}
                 </p>
                 <Link
-                  href="#"
+                  href={founder.linkedin || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--text-link)] hover:text-[var(--text-link-hover)] transition-colors"
                 >
                   <Linkedin className="h-4 w-4" />

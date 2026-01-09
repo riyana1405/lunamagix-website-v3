@@ -4,7 +4,8 @@ export const siteConfig = {
   description:
     "Where cutting-edge AI meets compassionate innovation — empowering every learner, supporting every life.",
   url: "https://lunamagix.app",
-  email: "social@lunamagix.app",
+  email: "ceo@lunamagix.com",
+  phone: "+91 9486515963",
   address: {
     street: "A34, Kumarasamy Street, Thiruanagar 7th Stop",
     city: "Madurai",
@@ -23,6 +24,7 @@ export const siteConfig = {
       credentials: "MS from IIT Madras",
       description:
         "Extensive biomedical research experience. Pioneered VR experiences for special schools.",
+      linkedin: "https://www.linkedin.com/in/sai-naveena-sri-s-7b5434126",
     },
     {
       name: "Mr. S. Vaidyanathan",
@@ -30,6 +32,7 @@ export const siteConfig = {
       credentials: "Academician turned tech entrepreneur",
       description:
         "Expertise in AI/ML and immersive tech. Background in pedagogical model design.",
+      linkedin: "https://www.linkedin.com/in/vaidyanathan14",
     },
   ],
   advisors: [
