@@ -22,13 +22,13 @@ function HearingDemo() {
   ];
   
   return (
-    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]">
+    <div className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
-          <Ear className="h-5 w-5 text-amber-400" />
+          <Ear className="h-5 w-5 text-[var(--luna-purple)]" />
           LunaSound Audio Processing
         </h3>
-        <span className="text-xs text-amber-400 bg-amber-500/20 px-2 py-1 rounded">AI Enhanced</span>
+        <span className="text-xs text-[var(--luna-purple)] bg-[var(--luna-purple)]/10 px-2 py-1 rounded border border-[var(--luna-purple)]/20">AI Enhanced</span>
       </div>
       
       {/* Scene Selection */}
@@ -39,8 +39,8 @@ function HearingDemo() {
             onClick={() => setActiveScene(id)}
             className={`p-3 rounded-xl transition-all duration-300 flex flex-col items-center ${
               activeScene === id 
-                ? 'bg-gradient-to-br from-amber-500 to-orange-600 text-white' 
-                : 'bg-white text-[var(--text-secondary)] hover:bg-gray-50 border border-[var(--border-default)]'
+                ? 'bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white' 
+                : 'bg-white text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] border border-[var(--border-default)]'
             }`}
           >
             <Icon className="h-5 w-5 mb-1" />
@@ -50,7 +50,7 @@ function HearingDemo() {
       </div>
       
       {/* Audio Visualization */}
-      <div className="relative h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-32 bg-[var(--bg-secondary)] rounded-xl overflow-hidden mb-4">
         <div className="absolute inset-0 flex items-center justify-center gap-1 px-4">
           {/* Background noise (reduced) */}
           <div className="flex items-end gap-0.5 opacity-30">
@@ -69,7 +69,7 @@ function HearingDemo() {
             {[...Array(20)].map((_, i) => (
               <motion.div
                 key={`speech-${i}`}
-                className="w-2 bg-gradient-to-t from-amber-500 to-orange-400 rounded-full"
+                className="w-2 bg-gradient-to-t from-[var(--luna-purple)] to-[var(--azure-blue)] rounded-full"
                 animate={{ 
                   height: [10, 20 + Math.random() * (speechEnhancement * 0.5), 10],
                 }}
@@ -93,7 +93,7 @@ function HearingDemo() {
         
         {/* Labels */}
         <div className="absolute bottom-2 left-3 text-xs text-[var(--text-tertiary)]">Background (Reduced)</div>
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-amber-600 font-medium">Speech (Enhanced)</div>
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-[var(--luna-purple)] font-medium">Speech (Enhanced)</div>
         <div className="absolute bottom-2 right-3 text-xs text-[var(--text-tertiary)]">Background (Reduced)</div>
       </div>
       
@@ -105,7 +105,7 @@ function HearingDemo() {
               <VolumeX className="h-4 w-4 text-[var(--text-tertiary)]" />
               Noise Reduction
             </span>
-            <span className="text-sm text-amber-600 font-medium">{noiseReduction}%</span>
+            <span className="text-sm text-[var(--luna-purple)] font-medium">{noiseReduction}%</span>
           </div>
           <input
             type="range"
@@ -113,7 +113,7 @@ function HearingDemo() {
             max="100"
             value={noiseReduction}
             onChange={(e) => setNoiseReduction(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#5C2D91]"
           />
         </div>
         
@@ -123,7 +123,7 @@ function HearingDemo() {
               <Mic className="h-4 w-4 text-[var(--text-tertiary)]" />
               Speech Enhancement
             </span>
-            <span className="text-sm text-amber-600 font-medium">{speechEnhancement}%</span>
+            <span className="text-sm text-[var(--luna-purple)] font-medium">{speechEnhancement}%</span>
           </div>
           <input
             type="range"
@@ -131,7 +131,7 @@ function HearingDemo() {
             max="100"
             value={speechEnhancement}
             onChange={(e) => setSpeechEnhancement(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#5C2D91]"
           />
         </div>
       </div>
@@ -143,7 +143,7 @@ function HearingDemo() {
           <p className="text-xs text-[var(--text-tertiary)]">Noise Floor</p>
         </div>
         <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">
-          <p className="text-lg font-bold text-amber-600">+12dB</p>
+          <p className="text-lg font-bold text-[var(--luna-purple)]">+12dB</p>
           <p className="text-xs text-[var(--text-tertiary)]">Speech Clarity</p>
         </div>
         <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">

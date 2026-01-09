@@ -33,16 +33,16 @@ function WheelchairDemo() {
   };
   
   return (
-    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)]">
+    <div className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
-          <Armchair className="h-5 w-5 text-emerald-400" />
+          <Armchair className="h-5 w-5 text-[var(--luna-purple)]" />
           LunaMove Control Center
         </h3>
         <div className="flex items-center gap-2">
-          <Battery className="h-4 w-4 text-green-400" />
-          <span className="text-xs text-green-400">85%</span>
-          <Wifi className="h-4 w-4 text-emerald-400 ml-2" />
+          <Battery className="h-4 w-4 text-green-500" />
+          <span className="text-xs text-green-600">85%</span>
+          <Wifi className="h-4 w-4 text-[var(--luna-purple)] ml-2" />
         </div>
       </div>
       
@@ -58,8 +58,8 @@ function WheelchairDemo() {
             onClick={() => setMode(id as typeof mode)}
             className={`p-3 rounded-xl transition-all duration-300 flex flex-col items-center ${
               mode === id 
-                ? 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white' 
-                : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:bg-gray-200'
+                ? 'bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white' 
+                : 'bg-white text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] border border-[var(--border-default)]'
             }`}
           >
             <Icon className="h-5 w-5 mb-1" />
@@ -69,7 +69,7 @@ function WheelchairDemo() {
       </div>
       
       {/* Visualization */}
-      <div className="relative h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-40 bg-[var(--bg-secondary)] rounded-xl overflow-hidden mb-4">
         {/* Wheelchair visualization */}
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
@@ -77,19 +77,19 @@ function WheelchairDemo() {
             animate={status.includes('Navigating') ? { x: [0, 10, 0] } : {}}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <div className="w-20 h-20 bg-gradient-to-br from-emerald-500/30 to-teal-600/30 rounded-full flex items-center justify-center">
-              <Armchair className="h-10 w-10 text-emerald-400" />
+            <div className="w-20 h-20 bg-[var(--luna-purple)]/10 rounded-full flex items-center justify-center border border-[var(--luna-purple)]/20">
+              <Armchair className="h-10 w-10 text-[var(--luna-purple)]" />
             </div>
             {/* Sensor rings */}
             {mode !== 'manual' && (
               <>
                 <motion.div
-                  className="absolute inset-0 border-2 border-emerald-400/30 rounded-full"
+                  className="absolute inset-0 border-2 border-[var(--luna-purple)]/30 rounded-full"
                   animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
                 <motion.div
-                  className="absolute inset-0 border-2 border-emerald-400/20 rounded-full"
+                  className="absolute inset-0 border-2 border-[var(--luna-purple)]/20 rounded-full"
                   animate={{ scale: [1, 2, 1], opacity: [0.3, 0, 0.3] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                 />
@@ -100,10 +100,10 @@ function WheelchairDemo() {
         
         {/* Status overlay */}
         <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center">
-          <div className="bg-white/80 px-3 py-1 rounded-lg shadow-sm">
-            <p className="text-xs text-emerald-600">{status}</p>
+          <div className="bg-white px-3 py-1 rounded-lg shadow-sm border border-[var(--border-default)]">
+            <p className="text-xs text-[var(--luna-purple)] font-medium">{status}</p>
           </div>
-          <div className="bg-white/80 px-3 py-1 rounded-lg shadow-sm flex items-center gap-2">
+          <div className="bg-white px-3 py-1 rounded-lg shadow-sm flex items-center gap-2 border border-[var(--border-default)]">
             <Gauge className="h-3 w-3 text-[var(--text-secondary)]" />
             <span className="text-xs text-[var(--text-primary)]">{speed}%</span>
           </div>
@@ -115,9 +115,9 @@ function WheelchairDemo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="absolute top-3 left-1/2 -translate-x-1/2 bg-emerald-100 border border-emerald-300 px-4 py-2 rounded-full"
+            className="absolute top-3 left-1/2 -translate-x-1/2 bg-[var(--luna-purple)]/10 border border-[var(--luna-purple)]/20 px-4 py-2 rounded-full"
           >
-            <p className="text-sm text-emerald-600 flex items-center gap-2">
+            <p className="text-sm text-[var(--luna-purple)] flex items-center gap-2">
               <Mic className="h-4 w-4" />
               "{command}"
             </p>
@@ -134,7 +134,7 @@ function WheelchairDemo() {
               <button
                 key={cmd}
                 onClick={() => processCommand(cmd)}
-                className="px-3 py-2 bg-white hover:bg-emerald-50 rounded-lg text-xs text-[var(--text-secondary)] hover:text-emerald-600 transition-colors border border-[var(--border-default)] hover:border-emerald-300"
+                className="px-3 py-2 bg-white hover:bg-[var(--luna-purple)]/5 rounded-lg text-xs text-[var(--text-secondary)] hover:text-[var(--luna-purple)] transition-colors border border-[var(--border-default)] hover:border-[var(--luna-purple)]/30"
               >
                 "{cmd}"
               </button>
@@ -147,7 +147,7 @@ function WheelchairDemo() {
       <div className="bg-white rounded-lg p-4 border border-[var(--border-default)]">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm text-[var(--text-primary)]">Speed Limit</span>
-          <span className="text-sm text-emerald-400">{speed}%</span>
+          <span className="text-sm text-[var(--luna-purple)] font-medium">{speed}%</span>
         </div>
         <input
           type="range"
@@ -155,7 +155,7 @@ function WheelchairDemo() {
           max="100"
           value={speed}
           onChange={(e) => setSpeed(Number(e.target.value))}
-          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#5C2D91]"
         />
         <div className="flex justify-between text-xs text-[var(--text-secondary)] mt-1">
           <span>Safe</span>

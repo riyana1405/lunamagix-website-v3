@@ -53,21 +53,21 @@ function RobotGuideDemo() {
   }, [isNavigating]);
   
   return (
-    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)]">
+    <div className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
-          <Dog className="h-5 w-5 text-blue-500" />
+          <Dog className="h-5 w-5 text-[var(--luna-purple)]" />
           LunaGuide Navigation Demo
         </h3>
         <div className="flex items-center gap-2">
-          <Battery className="h-4 w-4 text-green-400" />
-          <span className="text-xs text-green-400">92%</span>
-          <Wifi className="h-4 w-4 text-blue-400 ml-2" />
+          <Battery className="h-4 w-4 text-green-500" />
+          <span className="text-xs text-green-600">92%</span>
+          <Wifi className="h-4 w-4 text-[var(--luna-purple)] ml-2" />
         </div>
       </div>
       
       {/* Navigation Map */}
-      <div className="relative h-48 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl overflow-hidden mb-4">
+      <div className="relative h-48 bg-[var(--bg-secondary)] rounded-xl overflow-hidden mb-4">
         {/* Path line */}
         <svg className="absolute inset-0 w-full h-full">
           <path
@@ -122,17 +122,17 @@ function RobotGuideDemo() {
         
         {/* Destination */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2">
-          <div className="flex items-center gap-2 bg-green-500/20 px-3 py-1 rounded-full">
-            <MapPin className="h-4 w-4 text-green-400" />
-            <span className="text-xs text-green-400">☕ Coffee Shop</span>
+          <div className="flex items-center gap-2 bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">
+            <MapPin className="h-4 w-4 text-green-600" />
+            <span className="text-xs text-green-700 font-medium">☕ Coffee Shop</span>
           </div>
         </div>
         
         {/* User position */}
         <div className="absolute left-4 bottom-4">
-          <div className="flex items-center gap-2 bg-purple-500/20 px-3 py-1 rounded-full">
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
-            <span className="text-xs text-purple-400">Current Location</span>
+          <div className="flex items-center gap-2 bg-[var(--luna-purple)]/10 px-3 py-1 rounded-full border border-[var(--luna-purple)]/20">
+            <div className="w-2 h-2 bg-[var(--luna-purple)] rounded-full animate-pulse" />
+            <span className="text-xs text-[var(--luna-purple)] font-medium">Current Location</span>
           </div>
         </div>
       </div>
@@ -142,10 +142,10 @@ function RobotGuideDemo() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-3 mb-4 flex items-center gap-3"
+          className="bg-[var(--luna-purple)]/10 border border-[var(--luna-purple)]/20 rounded-lg p-3 mb-4 flex items-center gap-3"
         >
-          <Volume2 className="h-5 w-5 text-blue-400" />
-          <span className="text-sm text-blue-200">{voiceAlert}</span>
+          <Volume2 className="h-5 w-5 text-[var(--luna-purple)]" />
+          <span className="text-sm text-[var(--text-primary)]">{voiceAlert}</span>
         </motion.div>
       )}
       
@@ -155,8 +155,8 @@ function RobotGuideDemo() {
           onClick={() => setIsNavigating(!isNavigating)}
           className={`flex-1 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
             isNavigating 
-              ? 'bg-red-500/20 text-red-400 border border-red-500/30' 
-              : 'bg-blue-500 text-white hover:bg-blue-600'
+              ? 'bg-red-50 text-red-600 border border-red-200' 
+              : 'bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white hover:opacity-90'
           }`}
         >
           {isNavigating ? (
@@ -178,16 +178,16 @@ function RobotGuideDemo() {
       
       {/* Status */}
       <div className="mt-4 grid grid-cols-3 gap-3 text-center">
-        <div className="bg-white/80 rounded-lg py-2 border border-[var(--border-default)]">
+        <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">
           <p className="text-lg font-bold text-[var(--text-primary)]">0.3 mi</p>
           <p className="text-xs text-[var(--text-secondary)]">Distance</p>
         </div>
-        <div className="bg-white/80 rounded-lg py-2 border border-[var(--border-default)]">
+        <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">
           <p className="text-lg font-bold text-[var(--text-primary)]">5 min</p>
           <p className="text-xs text-[var(--text-secondary)]">ETA</p>
         </div>
-        <div className="bg-white/80 rounded-lg py-2 border border-[var(--border-default)]">
-          <p className="text-lg font-bold text-green-500">Clear</p>
+        <div className="bg-white rounded-lg py-2 border border-[var(--border-default)]">
+          <p className="text-lg font-bold text-green-600">Clear</p>
           <p className="text-xs text-[var(--text-secondary)]">Path Status</p>
         </div>
       </div>
