@@ -13,102 +13,153 @@ import {
   Users,
   School,
   Hospital,
-  Sparkles
+  Sparkles,
+  Home,
+  Trophy,
+  BookOpen,
+  Activity,
+  Target
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const solutions = [
   {
-    id: "education",
-    title: "Education Technology",
-    subtitle: "Transform Learning Experiences",
-    description: "Comprehensive AI-powered solutions for modern schools, coaching centers, and educational institutions. From smart attendance to engagement analytics.",
-    icon: GraduationCap,
+    id: "schools",
+    title: "For Schools",
+    subtitle: "AI-Powered Education for Modern Schools",
+    description: "Transform your institution with intelligent learning platforms, immersive classrooms, and smart campus solutions designed for 21st-century education.",
+    icon: School,
     color: "from-blue-500 to-indigo-600",
     bgColor: "bg-blue-50",
     iconColor: "text-blue-600",
     products: ["LunaLearn", "LunaViz 3D", "LunaWatch", "LunaFit"],
     benefits: [
-      "Smart attendance with facial recognition",
-      "AI-powered engagement analytics",
-      "Intelligent presentation system",
-      "Comprehensive assessment tools"
+      "Personalized learning with AI-adapted content",
+      "Data-driven insights for student progress",
+      "Smart campus safety solutions",
+      "Automated attendance and grading"
     ],
     audiences: [
       { icon: School, label: "K-12 Schools" },
-      { icon: Building2, label: "Coaching Centers" },
-      { icon: Users, label: "Universities" }
+      { icon: Building2, label: "Universities" },
+      { icon: Users, label: "Educators" }
     ],
-    link: "/products"
+    link: "/solutions/schools"
   },
   {
     id: "special-education",
-    title: "Special Education",
-    subtitle: "Inclusive Learning for All",
-    description: "Personalized IEP tracking, therapeutic experiences, and collaborative tools designed specifically for neurodiverse learners and special education centers.",
-    icon: Heart,
-    color: "from-purple-500 to-pink-600",
+    title: "For Special Education",
+    subtitle: "Technology That Sees Every Learner",
+    description: "AI-powered tools designed specifically for neurodiverse learners—supporting IEP goals, enabling multi-modal learning, and celebrating every student's unique path to success.",
+    icon: Accessibility,
+    color: "from-purple-500 to-violet-600",
     bgColor: "bg-purple-50",
     iconColor: "text-purple-600",
     products: ["LunaLearn IEP", "LunaSense", "LunaCare"],
     benefits: [
-      "Individualized Education Program (IEP) engine",
-      "Multi-sensory engagement suite",
-      "Therapist-parent collaboration tools",
-      "Progress tracking and analytics"
+      "Automatic IEP goal tracking with insights",
+      "Multi-modal learning (visual, auditory, kinesthetic)",
+      "Real-time progress monitoring",
+      "FERPA & privacy compliant"
     ],
     audiences: [
-      { icon: School, label: "Special Schools" },
+      { icon: Accessibility, label: "Special Schools" },
       { icon: Users, label: "Therapy Centers" },
       { icon: Heart, label: "Parents" }
     ],
-    link: "/products"
+    link: "/solutions/special-education"
   },
   {
-    id: "assistive",
-    title: "Assistive Technology",
-    subtitle: "Independence Through Innovation",
-    description: "AI-powered mobility aids, hearing enhancement, and independence-enabling devices that help people with disabilities live fuller, more autonomous lives.",
-    icon: Accessibility,
-    color: "from-teal-500 to-cyan-600",
-    bgColor: "bg-teal-50",
-    iconColor: "text-teal-600",
-    products: ["LunaGuide", "LunaMove", "LunaSound"],
+    id: "coaching",
+    title: "For Coaching Institutes",
+    subtitle: "Supercharge Your Coaching Center",
+    description: "AI-powered learning platforms that help coaching centers deliver personalized education at scale—improving results while reducing operational overhead.",
+    icon: GraduationCap,
+    color: "from-amber-500 to-orange-600",
+    bgColor: "bg-amber-50",
+    iconColor: "text-amber-600",
+    products: ["LunaLearn", "LunaViz 3D", "LunaWatch"],
     benefits: [
-      "AI pathfinding for visually impaired",
-      "Adaptive autonomous wheelchairs",
-      "AI-enhanced hearing solutions",
-      "Voice-controlled interfaces"
+      "Competitive exam prep (JEE, NEET, SAT, GRE)",
+      "Deep student analytics and insights",
+      "Adaptive difficulty adjustments",
+      "Batch management automation"
     ],
     audiences: [
-      { icon: Users, label: "Individuals" },
-      { icon: Hospital, label: "Rehabilitation Centers" },
-      { icon: Building2, label: "NGOs" }
+      { icon: BookOpen, label: "Test Prep" },
+      { icon: Target, label: "Competitive Exams" },
+      { icon: Users, label: "Tutoring" }
     ],
-    link: "/products"
+    link: "/solutions/coaching"
   },
   {
     id: "healthcare",
-    title: "Healthcare Solutions",
-    subtitle: "AI-Assisted Medical Care",
-    description: "Therapeutic immersion, diagnostic AI assistance, and clinical documentation automation for hospitals, clinics, and healthcare professionals.",
-    icon: Stethoscope,
+    title: "For Healthcare",
+    subtitle: "AI-Powered Healthcare Innovation",
+    description: "From diagnostic AI to therapeutic VR, our healthcare solutions help providers deliver better care while reducing burnout and improving patient outcomes.",
+    icon: Hospital,
     color: "from-green-500 to-emerald-600",
     bgColor: "bg-green-50",
     iconColor: "text-green-600",
     products: ["LunaCare", "LunaScan", "LunaScribe"],
     benefits: [
-      "VR-based therapeutic experiences",
-      "SAM3-powered diagnostic assistance",
-      "AI clinical documentation",
-      "Patient progress tracking"
+      "Save 2+ hours daily on documentation",
+      "AI-assisted diagnostic support",
+      "VR therapy for better outcomes",
+      "HIPAA compliant security"
     ],
     audiences: [
       { icon: Hospital, label: "Hospitals" },
-      { icon: Building2, label: "Clinics" },
+      { icon: Stethoscope, label: "Clinics" },
       { icon: Users, label: "Therapists" }
     ],
-    link: "/products"
+    link: "/solutions/healthcare"
+  },
+  {
+    id: "parents",
+    title: "For Parents & Families",
+    subtitle: "Support Your Child's Learning Journey",
+    description: "Stay connected to your child's education with real-time insights, understand their unique learning style, and create supportive environments at home.",
+    icon: Home,
+    color: "from-rose-500 to-pink-600",
+    bgColor: "bg-rose-50",
+    iconColor: "text-rose-600",
+    products: ["LunaLearn", "Parent Portal", "Progress Reports"],
+    benefits: [
+      "Real-time progress visibility",
+      "Understand your child's learning style",
+      "Direct teacher communication",
+      "Safe & private data protection"
+    ],
+    audiences: [
+      { icon: Home, label: "Families" },
+      { icon: Heart, label: "Parents" },
+      { icon: Users, label: "Guardians" }
+    ],
+    link: "/solutions/parents"
+  },
+  {
+    id: "sports",
+    title: "For Sports & Fitness",
+    subtitle: "AI-Powered Athletic Excellence",
+    description: "Transform sports training with AI biomechanics, real-time performance analytics, and smart coaching tools that help athletes reach their full potential.",
+    icon: Trophy,
+    color: "from-teal-500 to-cyan-600",
+    bgColor: "bg-teal-50",
+    iconColor: "text-teal-600",
+    products: ["LunaFit", "LunaMove", "Performance Analytics"],
+    benefits: [
+      "AI biomechanics movement analysis",
+      "Instant video feedback with annotations",
+      "Track speed, power, endurance metrics",
+      "Load management & injury prevention"
+    ],
+    audiences: [
+      { icon: Trophy, label: "Athletes" },
+      { icon: Activity, label: "Coaches" },
+      { icon: Building2, label: "Sports Academies" }
+    ],
+    link: "/solutions/sports"
   }
 ];
 
@@ -132,6 +183,16 @@ const colorStyles = {
     iconBg: "bg-green-100",
     iconColor: "text-green-600",
     checkColor: "text-green-600",
+  },
+  amber: {
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-600",
+    checkColor: "text-amber-600",
+  },
+  rose: {
+    iconBg: "bg-rose-100",
+    iconColor: "text-rose-600",
+    checkColor: "text-rose-600",
   },
 };
 
@@ -221,8 +282,8 @@ export default function SolutionsPage() {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   className="rounded-xl bg-white border border-[var(--border-default)] p-6 shadow-[var(--shadow-lg)]"
                 >
-                  <div className="text-3xl font-bold text-[var(--luna-purple)]">4</div>
-                  <div className="text-sm text-[var(--text-tertiary)]">Industry Verticals</div>
+                  <div className="text-3xl font-bold text-[var(--luna-purple)]">6</div>
+                  <div className="text-sm text-[var(--text-tertiary)]">Solution Areas</div>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -262,9 +323,11 @@ export default function SolutionsPage() {
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="space-y-20">
             {solutions.map((solution, index) => {
-              const styleKey = solution.id === "education" ? "blue" : 
+              const styleKey = solution.id === "schools" ? "blue" : 
                                solution.id === "special-education" ? "purple" : 
-                               solution.id === "assistive" ? "teal" : "green";
+                               solution.id === "coaching" ? "amber" :
+                               solution.id === "healthcare" ? "green" :
+                               solution.id === "parents" ? "rose" : "teal";
               const styles = colorStyles[styleKey as keyof typeof colorStyles];
               
               return (
