@@ -338,12 +338,13 @@ export default function SolutionsPage() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className={`relative rounded-2xl bg-gradient-to-br ${solution.color} p-8 shadow-xl`}
+                      className={`relative rounded-2xl bg-white p-8 shadow-[var(--shadow-lg)] border border-[var(--border-light)] hover:shadow-[var(--shadow-xl)] transition-all`}
                     >
-                      <div className="absolute inset-0 rounded-2xl bg-white/10 backdrop-blur-sm" />
+                      {/* Accent gradient bar at top */}
+                      <div className={`absolute top-0 left-0 right-0 h-1.5 rounded-t-2xl bg-gradient-to-r ${solution.color}`} />
                       <div className="relative">
                         {/* Audiences */}
-                        <p className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">
+                        <p className="text-sm font-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-4">
                           Designed For
                         </p>
                         <div className="grid grid-cols-3 gap-4">
@@ -354,24 +355,24 @@ export default function SolutionsPage() {
                               whileHover={{ scale: 1.05 }}
                               transition={{ type: "spring", stiffness: 300 }}
                             >
-                              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 mb-2 group-hover:bg-white/30 transition-colors">
-                                <audience.icon className="h-6 w-6 text-white" />
+                              <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${solution.bgColor} mb-2 group-hover:scale-110 transition-transform`}>
+                                <audience.icon className={`h-6 w-6 ${solution.iconColor}`} />
                               </div>
-                              <p className="text-sm text-white font-medium">{audience.label}</p>
+                              <p className="text-sm text-[var(--text-primary)] font-medium">{audience.label}</p>
                             </motion.div>
                           ))}
                         </div>
                         
                         {/* Stats */}
-                        <div className="mt-8 pt-6 border-t border-white/20">
+                        <div className="mt-8 pt-6 border-t border-[var(--border-light)]">
                           <div className="grid grid-cols-2 gap-4">
                             <div>
-                              <p className="text-3xl font-bold text-white">98%</p>
-                              <p className="text-sm text-white/80">Satisfaction Rate</p>
+                              <p className="text-3xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">98%</p>
+                              <p className="text-sm text-[var(--text-secondary)]">Satisfaction Rate</p>
                             </div>
                             <div>
-                              <p className="text-3xl font-bold text-white">500+</p>
-                              <p className="text-sm text-white/80">Institutions</p>
+                              <p className="text-3xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">500+</p>
+                              <p className="text-sm text-[var(--text-secondary)]">Institutions</p>
                             </div>
                           </div>
                         </div>
