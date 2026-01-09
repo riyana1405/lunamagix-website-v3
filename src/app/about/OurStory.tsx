@@ -78,9 +78,15 @@ export function OurStory() {
               therapist who finally has the data they need — that&apos;s why we exist.
             </p>
 
-            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-[var(--luna-purple)] to-[var(--azure-blue)]">
-              <h3 className="text-xl font-bold text-white">Our Mission</h3>
-              <p className="mt-2 text-white/90">
+            <div className="mt-8 p-6 rounded-xl bg-[var(--gradient-hero)] border border-[var(--border-light)] shadow-[var(--shadow-md)]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-3 py-1 text-xs font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-3">
+                <Sparkles className="h-3 w-3" />
+                Our Mission
+              </span>
+              <h3 className="text-xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">
+                Democratizing AI for Every Learner
+              </h3>
+              <p className="mt-2 text-[var(--text-secondary)]">
                 To democratize access to cutting-edge AI and immersive technology
                 for education and quality of life enhancement, with unwavering
                 commitment to neurodiverse communities.
