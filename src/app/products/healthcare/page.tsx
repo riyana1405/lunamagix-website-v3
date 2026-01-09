@@ -16,7 +16,7 @@ const products = [
     description: "VR-based therapeutic experiences for mental health treatment, pain management, and rehabilitation that complement traditional care approaches.",
     icon: Heart,
     features: ["VR Therapy", "Pain Management", "Anxiety Treatment", "Progress Tracking"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-pink-500 to-rose-600",
     href: "/products/healthcare/lunacare"
   },
   {
@@ -26,7 +26,7 @@ const products = [
     description: "Advanced medical imaging analysis powered by the Segment Anything Model, assisting radiologists and clinicians in faster, more accurate diagnoses.",
     icon: ScanLine,
     features: ["Medical Imaging", "AI Analysis", "SAM3 Integration", "Clinical Decision Support"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-green-500 to-emerald-600",
     href: "/products/healthcare/lunascan"
   },
   {
@@ -36,7 +36,7 @@ const products = [
     description: "Automated clinical documentation that listens to patient-provider conversations and generates accurate, compliant medical records.",
     icon: FileText,
     features: ["Voice-to-Text", "EHR Integration", "HIPAA Compliant", "Multi-language"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-blue-500 to-indigo-600",
     href: "/products/healthcare/lunascribe"
   }
 ];
@@ -47,11 +47,11 @@ export default function HealthcareProductsPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-28">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-[var(--luna-purple)]/5 blur-3xl" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-[var(--azure-blue)]/5 blur-3xl" />
+          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-[var(--luna-purple)]/10 blur-3xl" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-[var(--luna-purple-light)]/10 blur-3xl" />
         </div>
         
-        <div className="relative mx-auto max-w-[1400px] px-6">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--luna-purple-lighter)]">
               <Stethoscope className="h-6 w-6 text-[var(--luna-purple)]" />
@@ -67,13 +67,13 @@ export default function HealthcareProductsPage() {
             Therapeutic immersion, diagnostic AI assistance, and clinical documentation automation for hospitals, clinics, and healthcare professionals.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Button size="lg" className="bg-[var(--bg-primary)] text-green-700 hover:bg-green-50" asChild>
+            <Button size="lg" className="bg-white text-green-700 hover:bg-green-50" asChild>
               <Link href="/contact?demo=true">
                 Request Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-[var(--text-primary)] hover:bg-[var(--bg-primary)]/10" asChild>
+            <Button size="lg" variant="outline" className="border-[var(--luna-purple)]/30 text-[var(--luna-purple)] hover:bg-[var(--luna-purple)]/10" asChild>
               <Link href="/resources/whitepapers">
                 Read Research
               </Link>
@@ -83,8 +83,8 @@ export default function HealthcareProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
               Our Healthcare Products
@@ -99,10 +99,10 @@ export default function HealthcareProductsPage() {
               <Link
                 key={product.id}
                 href={product.href}
-                className="group relative rounded-2xl border border-[var(--border-default)] bg-[var(--bg-primary)] p-6 shadow-sm transition-all hover:shadow-lg hover:border-[var(--luna-purple)]"
+                className="group relative rounded-2xl border border-[var(--border-default)] bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:border-[var(--luna-purple)]"
               >
                 <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${product.color} mb-4`}>
-                  <product.icon className="h-6 w-6 text-[var(--text-primary)]" />
+                  <product.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--luna-purple)]">
                   {product.name}
@@ -135,7 +135,7 @@ export default function HealthcareProductsPage() {
 
       {/* Compliance Section */}
       <section className="py-20 sm:py-28 bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
               Built for Healthcare Standards
@@ -145,19 +145,19 @@ export default function HealthcareProductsPage() {
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-4">
-            <div className="text-center p-6 rounded-2xl bg-[var(--bg-primary)] shadow-sm">
+            <div className="text-center p-6 rounded-2xl bg-white shadow-sm">
               <p className="text-2xl font-bold text-[var(--luna-purple)]">HIPAA</p>
               <p className="mt-2 text-sm text-[var(--text-secondary)]">Compliant data handling</p>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-[var(--bg-primary)] shadow-sm">
+            <div className="text-center p-6 rounded-2xl bg-white shadow-sm">
               <p className="text-2xl font-bold text-[var(--luna-purple)]">GDPR</p>
               <p className="mt-2 text-sm text-[var(--text-secondary)]">Privacy by design</p>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-[var(--bg-primary)] shadow-sm">
+            <div className="text-center p-6 rounded-2xl bg-white shadow-sm">
               <p className="text-2xl font-bold text-[var(--luna-purple)]">ISO 27001</p>
               <p className="mt-2 text-sm text-[var(--text-secondary)]">Information security</p>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-[var(--bg-primary)] shadow-sm">
+            <div className="text-center p-6 rounded-2xl bg-white shadow-sm">
               <p className="text-2xl font-bold text-[var(--luna-purple)]">CE Mark</p>
               <p className="mt-2 text-sm text-[var(--text-secondary)]">Medical device standards</p>
             </div>
@@ -166,8 +166,8 @@ export default function HealthcareProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
-        <div className="mx-auto max-w-[1400px] px-6 text-center">
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
             Ready to Enhance Your Healthcare Practice?
           </h2>

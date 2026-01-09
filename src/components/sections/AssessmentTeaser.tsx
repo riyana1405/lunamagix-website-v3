@@ -31,16 +31,16 @@ const steps = [
 export function AssessmentTeaser() {
   return (
     <section className="relative overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--luna-purple)] via-[var(--luna-purple-dark)] to-[var(--azure-blue)]" />
+      {/* Light Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f8f9fc] via-[#f0f4ff] to-[#e8f4f8]" />
       
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-32 top-1/4 h-[500px] w-[500px] rounded-full bg-white/5 blur-[120px]" />
+        <div className="absolute -left-32 top-1/4 h-[500px] w-[500px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
         <div className="absolute -right-32 bottom-1/4 h-[500px] w-[500px] rounded-full bg-[var(--accent-teal)]/10 blur-[120px]" />
         {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)',
+        <div className="absolute inset-0 opacity-[0.05]" style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, var(--luna-purple) 1px, transparent 1px)',
           backgroundSize: '40px 40px'
         }} />
       </div>
@@ -57,21 +57,21 @@ export function AssessmentTeaser() {
               className="text-center lg:text-left"
             >
               {/* Badge */}
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm border border-white/20">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple)]/10 px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/20">
                 <Brain className="h-4 w-4" />
                 Free Developmental Screening
               </span>
 
               {/* Title */}
-              <h2 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              <h2 className="mt-6 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
                 NeuroPath Screening Tool
               </h2>
-              <p className="mt-3 text-xl font-medium text-[var(--accent-teal-light)]">
+              <p className="mt-3 text-xl font-medium text-[var(--luna-purple)]">
                 AI-Powered Developmental Assessment
               </p>
 
               {/* Description */}
-              <p className="mt-6 text-lg leading-relaxed text-white/80 max-w-xl lg:max-w-none">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)] max-w-xl lg:max-w-none">
                 Early detection enables early intervention. Our AI-powered screening tool 
                 helps parents and educators identify potential developmental differences — 
                 the first step toward getting the right support.
@@ -84,9 +84,9 @@ export function AssessmentTeaser() {
                   { icon: Shield, text: "Privacy-first" },
                   { icon: Sparkles, text: "AI-powered insights" },
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 text-white/90">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
-                      <item.icon className="h-4 w-4 text-[var(--accent-teal-light)]" />
+                  <div key={index} className="flex items-center gap-2 text-[var(--text-primary)]">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--luna-purple)]/10">
+                      <item.icon className="h-4 w-4 text-[var(--luna-purple)]" />
                     </div>
                     <span className="text-sm font-medium">{item.text}</span>
                   </div>
@@ -98,7 +98,7 @@ export function AssessmentTeaser() {
                 <Button 
                   size="lg" 
                   asChild 
-                  className="bg-white text-[var(--luna-purple)] hover:bg-white/90 shadow-xl hover:shadow-2xl group font-semibold"
+                  className="bg-[var(--luna-purple)] text-white hover:bg-[var(--luna-purple-dark)] shadow-xl hover:shadow-2xl group font-semibold"
                 >
                   <Link href="/assessment">
                     Start Free Screening
@@ -109,7 +109,7 @@ export function AssessmentTeaser() {
                   size="lg" 
                   variant="outline" 
                   asChild 
-                  className="border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+                  className="border-[var(--luna-purple)]/30 text-[var(--luna-purple)] hover:bg-[var(--luna-purple)]/10 hover:border-[var(--luna-purple)]/50"
                 >
                   <Link href="/assessment">
                     Learn How It Works
@@ -127,34 +127,34 @@ export function AssessmentTeaser() {
               className="relative"
             >
               {/* Stats Card */}
-              <div className="rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 p-8 sm:p-10">
+              <div className="rounded-3xl bg-white shadow-xl border border-gray-100 p-8 sm:p-10">
                 <div className="grid grid-cols-2 gap-6">
                   {/* Stat 1 */}
-                  <div className="text-center p-6 rounded-2xl bg-white/10">
-                    <div className="text-4xl sm:text-5xl font-bold text-white">50K+</div>
-                    <div className="mt-2 text-sm text-white/70">Screenings Completed</div>
+                  <div className="text-center p-6 rounded-2xl bg-[var(--luna-purple)]/5">
+                    <div className="text-4xl sm:text-5xl font-bold text-[var(--luna-purple)]">50K+</div>
+                    <div className="mt-2 text-sm text-[var(--text-secondary)]">Screenings Completed</div>
                   </div>
                   {/* Stat 2 */}
-                  <div className="text-center p-6 rounded-2xl bg-white/10">
-                    <div className="text-4xl sm:text-5xl font-bold text-[var(--accent-teal-light)]">98%</div>
-                    <div className="mt-2 text-sm text-white/70">Accuracy Rate</div>
+                  <div className="text-center p-6 rounded-2xl bg-[var(--accent-teal)]/10">
+                    <div className="text-4xl sm:text-5xl font-bold text-[var(--accent-teal)]">98%</div>
+                    <div className="mt-2 text-sm text-[var(--text-secondary)]">Accuracy Rate</div>
                   </div>
                   {/* Stat 3 */}
-                  <div className="text-center p-6 rounded-2xl bg-white/10">
-                    <div className="text-4xl sm:text-5xl font-bold text-white">15min</div>
-                    <div className="mt-2 text-sm text-white/70">Average Duration</div>
+                  <div className="text-center p-6 rounded-2xl bg-[var(--azure-blue)]/10">
+                    <div className="text-4xl sm:text-5xl font-bold text-[var(--azure-blue)]">15min</div>
+                    <div className="mt-2 text-sm text-[var(--text-secondary)]">Average Duration</div>
                   </div>
                   {/* Stat 4 */}
-                  <div className="text-center p-6 rounded-2xl bg-white/10">
-                    <div className="text-4xl sm:text-5xl font-bold text-[var(--accent-teal-light)]">500+</div>
-                    <div className="mt-2 text-sm text-white/70">Partner Schools</div>
+                  <div className="text-center p-6 rounded-2xl bg-[var(--luna-purple)]/5">
+                    <div className="text-4xl sm:text-5xl font-bold text-[var(--luna-purple)]">500+</div>
+                    <div className="mt-2 text-sm text-[var(--text-secondary)]">Partner Schools</div>
                   </div>
                 </div>
 
                 {/* Trust Badge */}
-                <div className="mt-8 flex items-center justify-center gap-3 pt-6 border-t border-white/10">
-                  <Shield className="h-5 w-5 text-[var(--accent-teal-light)]" />
-                  <span className="text-sm text-white/80">HIPAA Compliant • Secure & Private</span>
+                <div className="mt-8 flex items-center justify-center gap-3 pt-6 border-t border-gray-100">
+                  <Shield className="h-5 w-5 text-[var(--accent-teal)]" />
+                  <span className="text-sm text-[var(--text-secondary)]">HIPAA Compliant • Secure & Private</span>
                 </div>
               </div>
             </motion.div>
@@ -168,7 +168,7 @@ export function AssessmentTeaser() {
             transition={{ delay: 0.3 }}
             className="mt-20"
           >
-            <h3 className="text-center text-xl font-semibold text-white mb-10">
+            <h3 className="text-center text-xl font-semibold text-[var(--text-primary)] mb-10">
               How It Works
             </h3>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -198,7 +198,7 @@ export function AssessmentTeaser() {
           </motion.div>
 
           {/* Disclaimer */}
-          <p className="mt-12 text-center text-sm text-white/50">
+          <p className="mt-12 text-center text-sm text-[var(--text-secondary)]/70">
             This is a preliminary screening tool, not a medical diagnosis. Results
             should be discussed with qualified healthcare professionals.
           </p>

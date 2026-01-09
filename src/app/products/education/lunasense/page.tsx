@@ -5,7 +5,7 @@ import {
   Hand, Eye, Ear, Brain, Sparkles, Music, 
   Palette, Waves, Lightbulb, Users, Heart,
   Accessibility, Volume2, Zap, MonitorPlay,
-  ArrowRight, Check, Star
+  ArrowRight, Check, Star, CheckCircle
 } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -22,7 +22,7 @@ function SensoryExperience() {
   const [intensity, setIntensity] = useState(50);
   
   return (
-    <div className="bg-gradient-to-br from-[var(--luna-purple)]/5 to-[var(--azure-blue)]/5 rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]">
+    <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-[var(--text-primary)] flex items-center gap-2">
           <Sparkles className="h-5 w-5 text-[var(--luna-purple)]" />
@@ -42,8 +42,8 @@ function SensoryExperience() {
               onClick={() => setActiveSense(sense.id)}
               className={`p-3 rounded-xl transition-all duration-300 ${
                 isActive 
-                  ? `bg-gradient-to-br ${sense.color} shadow-lg shadow-purple-500/25` 
-                  : 'bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)]'
+                  ? `bg-gradient-to-br from-[var(--luna-purple)] to-[var(--azure-blue)] shadow-lg` 
+                  : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'
               }`}
             >
               <Icon className={`h-6 w-6 mx-auto mb-1 ${isActive ? 'text-white' : 'text-[var(--text-secondary)]'}`} />
@@ -54,7 +54,7 @@ function SensoryExperience() {
       </div>
       
       {/* Sensory Visualization */}
-      <div className="relative h-48 bg-gradient-to-br from-[var(--bg-secondary)] to-[var(--bg-tertiary)] rounded-xl overflow-hidden mb-4 border border-[var(--border-default)]">
+      <div className="relative h-48 bg-gray-50 border border-gray-200 rounded-xl overflow-hidden mb-4">
         {activeSense === 'visual' && (
           <motion.div 
             className="absolute inset-0"
@@ -134,8 +134,8 @@ function SensoryExperience() {
         )}
         
         {/* Learner Avatar */}
-        <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg border border-[var(--border-default)] shadow-sm">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+        <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-white/90 border border-gray-200 px-3 py-2 rounded-lg shadow">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--luna-purple)] to-[var(--azure-blue)] flex items-center justify-center">
             <span className="text-xs">🧒</span>
           </div>
           <div>
@@ -146,9 +146,9 @@ function SensoryExperience() {
       </div>
       
       {/* Intensity Control */}
-      <div className="bg-[var(--bg-secondary)] rounded-lg p-4 border border-[var(--border-default)]">
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-[var(--text-secondary)]">Sensory Intensity</span>
+          <span className="text-sm text-[var(--text-primary)]">Sensory Intensity</span>
           <span className="text-sm text-[var(--luna-purple)]">{intensity}%</span>
         </div>
         <input
@@ -157,9 +157,9 @@ function SensoryExperience() {
           max="100"
           value={intensity}
           onChange={(e) => setIntensity(Number(e.target.value))}
-          className="w-full h-2 bg-[var(--bg-tertiary)] rounded-lg appearance-none cursor-pointer accent-purple-500"
+          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[var(--luna-purple)]"
         />
-        <div className="flex justify-between text-xs text-[var(--text-tertiary)] mt-1">
+        <div className="flex justify-between text-xs text-[var(--text-secondary)] mt-1">
           <span>Calming</span>
           <span>Moderate</span>
           <span>Stimulating</span>
@@ -251,11 +251,7 @@ export default function LunaSensePage() {
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
-        {/* Subtle blur circles */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--luna-purple)]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--azure-blue)]/5 rounded-full blur-3xl" />
-        
-        <div className="mx-auto max-w-[1400px] px-6 relative z-10">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -263,13 +259,14 @@ export default function LunaSensePage() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 mb-6">
-                <span className="bg-[var(--luna-purple-lighter)] text-[var(--luna-purple)] px-4 py-2 rounded-full text-sm font-semibold border border-[var(--luna-purple)]/10">
-                  Multi-Sensory Learning
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  EDUCATION
                 </span>
+                <span className="text-[var(--text-secondary)] text-sm">Multi-Sensory Learning</span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[var(--text-primary)]">
-                <span>Luna</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <span className="text-[var(--text-primary)]">Luna</span>
                 <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">Sense</span>
               </h1>
               
@@ -277,7 +274,7 @@ export default function LunaSensePage() {
                 AI-powered multi-sensory environments that adapt to each learner's unique sensory profile—supporting focus, regulation, and engagement through therapeutic experiences.
               </p>
               
-              <p className="text-[var(--text-secondary)] mb-8">
+              <p className="text-[var(--text-tertiary)] mb-8">
                 Designed for neurodiverse learners, LunaSense creates personalized sensory experiences that transform classrooms, therapy rooms, and homes into responsive, healing spaces.
               </p>
               
@@ -291,7 +288,7 @@ export default function LunaSensePage() {
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 border-[var(--border-default)] text-[var(--text-primary)] bg-white hover:bg-[var(--bg-secondary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border"
+                  className="inline-flex items-center gap-2 bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border border-[var(--border-default)]"
                 >
                   View All Products
                 </Link>
@@ -311,7 +308,7 @@ export default function LunaSensePage() {
       
       {/* Stats Section */}
       <section className="py-12 border-y border-[var(--border-default)] bg-[var(--bg-primary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
@@ -334,7 +331,7 @@ export default function LunaSensePage() {
       
       {/* Features Grid */}
       <section className="py-20 bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -375,7 +372,7 @@ export default function LunaSensePage() {
       
       {/* Use Cases */}
       <section className="py-20 bg-[var(--bg-primary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -418,7 +415,7 @@ export default function LunaSensePage() {
       
       {/* FAQ Section */}
       <section className="py-20 bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -448,34 +445,65 @@ export default function LunaSensePage() {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
-        <div className="mx-auto max-w-[1400px] px-6 text-center">
+      {/* CTA Section - Light Background Style */}
+      <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-24">
+        {/* Background blur effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
-              Create Therapeutic Sensory Spaces
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-6">
+              <Sparkles className="h-4 w-4" />
+              Free Demo Available
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] mb-4">
+              Create Therapeutic{" "}
+              <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">
+                Sensory Spaces
+              </span>
             </h2>
-            <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto text-lg">
               Transform any space into an adaptive sensory environment that supports learning and regulation.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-all duration-300"
+                className="group inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-button-hover)]"
               >
                 Schedule Consultation
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/partner"
-                className="inline-flex items-center gap-2 bg-transparent border border-[var(--border-default)] text-[var(--text-primary)] bg-white font-semibold px-8 py-4 rounded-xl hover:bg-[var(--bg-secondary)] transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-[var(--border-default)] text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl hover:bg-[var(--gray-50)] hover:border-[var(--border-strong)] transition-all duration-300"
               >
                 Become a Partner
               </Link>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-10 pt-8 border-t border-[var(--border-light)]">
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>Multi-Sensory Design</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>Adaptive Technology</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>Therapeutic Proven</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

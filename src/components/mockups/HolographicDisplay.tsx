@@ -18,9 +18,9 @@ export function HolographicDisplay() {
   }, [isPlaying]);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900 shadow-2xl">
+    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+      <div className="flex items-center justify-between border-b border-gray-200 bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
             <Layers className="h-4 w-4 text-white" />
@@ -35,13 +35,13 @@ export function HolographicDisplay() {
       </div>
 
       {/* 3D Viewport */}
-      <div className="relative flex h-72 items-center justify-center overflow-hidden">
+      <div className="relative flex h-72 items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-pink-50">
         {/* Holographic Grid Background */}
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)",
+              "linear-gradient(rgba(139, 92, 246, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.2) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -140,18 +140,18 @@ export function HolographicDisplay() {
         </motion.div>
 
         {/* Info Overlay */}
-        <div className="absolute bottom-4 left-4 rounded-lg bg-black/50 px-3 py-2 backdrop-blur-sm">
-          <p className="text-xs text-purple-300">DNA Double Helix</p>
-          <p className="text-lg font-bold text-white">Interactive Model</p>
+        <div className="absolute bottom-4 left-4 rounded-lg bg-white/90 px-3 py-2 shadow-md backdrop-blur-sm border border-gray-200">
+          <p className="text-xs text-purple-600">DNA Double Helix</p>
+          <p className="text-lg font-bold text-gray-900">Interactive Model</p>
         </div>
       </div>
 
       {/* Controls */}
-      <div className="flex items-center justify-between border-t border-white/10 bg-black/30 px-4 py-3">
+      <div className="flex items-center justify-between border-t border-gray-200 bg-gray-50 px-4 py-3">
         <div className="flex gap-2">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="rounded-lg bg-white/10 p-2 text-white hover:bg-white/20"
+            className="rounded-lg bg-gray-100 border border-gray-200 p-2 text-gray-700 hover:bg-gray-200"
           >
             {isPlaying ? (
               <Pause className="h-4 w-4" />
@@ -161,7 +161,7 @@ export function HolographicDisplay() {
           </button>
           <button
             onClick={() => setRotation({ x: 0, y: 0 })}
-            className="rounded-lg bg-white/10 p-2 text-white hover:bg-white/20"
+            className="rounded-lg bg-gray-100 border border-gray-200 p-2 text-gray-700 hover:bg-gray-200"
           >
             <RotateCcw className="h-4 w-4" />
           </button>
@@ -171,21 +171,21 @@ export function HolographicDisplay() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setZoom((z) => Math.max(0.5, z - 0.1))}
-              className="rounded-lg bg-white/10 p-2 text-white hover:bg-white/20"
+              className="rounded-lg bg-gray-100 border border-gray-200 p-2 text-gray-700 hover:bg-gray-200"
             >
               <ZoomOut className="h-4 w-4" />
             </button>
-            <span className="text-sm text-white">{Math.round(zoom * 100)}%</span>
+            <span className="text-sm text-gray-900">{Math.round(zoom * 100)}%</span>
             <button
               onClick={() => setZoom((z) => Math.min(2, z + 0.1))}
-              className="rounded-lg bg-white/10 p-2 text-white hover:bg-white/20"
+              className="rounded-lg bg-gray-100 border border-gray-200 p-2 text-gray-700 hover:bg-gray-200"
             >
               <ZoomIn className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-sm text-gray-400">
+        <div className="flex items-center gap-2 text-sm text-[var(--text-tertiary)]">
           <Move className="h-4 w-4" />
           <span>Gesture Control Active</span>
         </div>

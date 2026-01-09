@@ -40,9 +40,9 @@ export function FitnessCoach() {
   }, [isActive]);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gradient-to-br from-orange-950 via-amber-950 to-orange-950 shadow-2xl">
+    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+      <div className="flex items-center justify-between border-b border-gray-200 bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-orange-500 to-amber-500">
             <Activity className="h-4 w-4 text-white" />
@@ -55,9 +55,9 @@ export function FitnessCoach() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-px bg-white/5">
+      <div className="grid grid-cols-3 gap-px bg-gray-100">
         {/* Pose Detection View */}
-        <div className="col-span-2 relative h-72 bg-black/30">
+        <div className="col-span-2 relative h-72 bg-gradient-to-br from-orange-50 to-amber-50">
           {/* Skeleton overlay visualization */}
           <svg className="absolute inset-0 h-full w-full" viewBox="0 0 200 300">
             {/* Body Skeleton */}
@@ -127,9 +127,9 @@ export function FitnessCoach() {
           </svg>
 
           {/* Current Exercise */}
-          <div className="absolute left-4 top-4 rounded-lg bg-black/50 px-3 py-2 backdrop-blur-sm">
-            <p className="text-xs text-orange-300">Current Exercise</p>
-            <p className="text-lg font-bold text-white">Squats</p>
+          <div className="absolute left-4 top-4 rounded-lg bg-white/90 px-3 py-2 shadow-md backdrop-blur-sm border border-gray-200">
+            <p className="text-xs text-orange-600">Current Exercise</p>
+            <p className="text-lg font-bold text-gray-900">Squats</p>
           </div>
 
           {/* Feedback */}
@@ -139,10 +139,10 @@ export function FitnessCoach() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className={`absolute right-4 top-4 flex items-center gap-2 rounded-lg px-3 py-2 ${
+              className={`absolute right-4 top-4 flex items-center gap-2 rounded-lg px-3 py-2 shadow-md border ${
                 feedback.type === "good"
-                  ? "bg-green-500/20 text-green-400"
-                  : "bg-amber-500/20 text-amber-400"
+                  ? "bg-green-50 text-green-700 border-green-200"
+                  : "bg-amber-50 text-amber-700 border-amber-200"
               }`}
             >
               {feedback.type === "good" ? (
@@ -156,7 +156,7 @@ export function FitnessCoach() {
         </div>
 
         {/* Stats Panel */}
-        <div className="flex flex-col bg-black/20 p-4">
+        <div className="flex flex-col bg-white p-4">
           <div className="space-y-4">
             {/* Rep Counter */}
             <div className="text-center">
@@ -164,11 +164,11 @@ export function FitnessCoach() {
                 key={reps}
                 initial={{ scale: 1.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className="text-5xl font-bold text-white"
+                className="text-5xl font-bold text-gray-900"
               >
                 {reps}
               </motion.p>
-              <p className="text-sm text-orange-300">Reps</p>
+              <p className="text-sm text-orange-600">Reps</p>
             </div>
 
             {/* Stats */}
@@ -181,13 +181,13 @@ export function FitnessCoach() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex items-center justify-between rounded-lg bg-white/5 px-3 py-2"
+                  className="flex items-center justify-between rounded-lg bg-gray-50 border border-gray-200 px-3 py-2"
                 >
                   <div className="flex items-center gap-2">
-                    <stat.icon className="h-4 w-4 text-orange-400" />
-                    <span className="text-xs text-gray-400">{stat.label}</span>
+                    <stat.icon className="h-4 w-4 text-orange-500" />
+                    <span className="text-xs text-[var(--text-tertiary)]">{stat.label}</span>
                   </div>
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-sm font-medium text-gray-900">
                     {stat.value}
                   </span>
                 </div>
@@ -217,7 +217,7 @@ export function FitnessCoach() {
             </button>
             <button
               onClick={() => setReps(0)}
-              className="rounded-lg bg-white/10 px-3 py-2 text-white"
+              className="rounded-lg bg-gray-100 border border-gray-200 px-3 py-2 text-gray-700"
             >
               <RotateCcw className="h-4 w-4" />
             </button>

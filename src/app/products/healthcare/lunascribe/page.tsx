@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 import { 
   FileText, Mic, Brain, Shield, Clock, 
   Stethoscope, ClipboardList, CheckCircle, User,
-  ArrowRight, Check, Zap, MessageSquare, FileCheck
+  ArrowRight, Check, Zap, MessageSquare, FileCheck, Sparkles
 } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { Button } from "@/components/ui/button";
 
 function DocumentationDemo() {
   const [isListening, setIsListening] = useState(false);
@@ -296,53 +297,75 @@ const faqs = [
 
 export default function LunaScribePage() {
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
-        {/* Blur circles */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--luna-purple)]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--azure-blue)]/5 rounded-full blur-3xl" />
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
+        </div>
         
-        <div className="mx-auto max-w-[1400px] px-6 relative z-10">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
             >
-              <div className="flex items-center gap-2 mb-6">
-                <span className="bg-[var(--luna-purple-lighter)] text-[var(--luna-purple)] px-4 py-2 rounded-full text-sm font-semibold border border-[var(--luna-purple)]/10">
-                  Healthcare · Clinical Documentation
-                </span>
-              </div>
+              {/* Badge */}
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-6">
+                <Sparkles className="h-4 w-4" />
+                Healthcare Technology
+              </span>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span className="text-[var(--text-primary)]">Luna</span>
-                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">Scribe</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1]">
+                <span className="text-[var(--text-primary)]">LunaScribe: </span>
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">AI Documentation</span>
               </h1>
               
-              <p className="text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
-                Ambient AI documentation that listens to patient visits and automatically generates accurate, structured clinical notes—giving physicians their time back.
+              <p className="text-xl text-[var(--text-secondary)] mb-6 leading-relaxed max-w-xl lg:mx-0 mx-auto">
+                Ambient AI documentation that listens to patient visits and automatically generates accurate, structured clinical notes.
               </p>
               
-              <p className="text-[var(--text-secondary)] mb-8">
-                LunaScribe understands medical conversations, creates EHR-ready documentation, and integrates seamlessly into clinical workflows without disrupting the physician-patient relationship.
-              </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-violet-500/25"
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
+                <Button 
+                  size="lg" 
+                  asChild 
+                  className="group bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] text-white shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-button-hover)] transition-all px-6"
                 >
-                  Request Demo
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="/products"
-                  className="inline-flex items-center gap-2 border-[var(--border-default)] text-[var(--text-primary)] bg-white hover:bg-[var(--bg-secondary)] font-semibold px-8 py-4 rounded-xl transition-all duration-300 border"
+                  <Link href="/contact">
+                    Request Demo
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  asChild 
+                  className="border-[var(--border-default)] text-[var(--text-primary)] hover:bg-[var(--gray-50)] hover:border-[var(--border-strong)]"
                 >
-                  View All Products
-                </Link>
+                  <Link href="/products">View All Products</Link>
+                </Button>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="pt-8 border-t border-[var(--border-light)]">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
+                  <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                    <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                    <span>HIPAA Compliant</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                    <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                    <span>EHR Integrated</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                    <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                    <span>99% Accuracy</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
             
@@ -350,8 +373,38 @@ export default function LunaScribePage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
             >
-              <DocumentationDemo />
+              {/* Main Display Container */}
+              <div className="relative rounded-2xl overflow-hidden border border-[var(--border-default)] bg-white shadow-[var(--shadow-xl)]">
+                <DocumentationDemo />
+              </div>
+              
+              {/* Floating Stats Card - Left */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="absolute -left-4 top-1/4 hidden lg:block"
+              >
+                <div className="rounded-xl bg-white border border-[var(--border-default)] p-4 shadow-[var(--shadow-lg)]">
+                  <div className="text-2xl font-bold text-[var(--luna-purple)]">2hrs</div>
+                  <div className="text-xs text-[var(--text-tertiary)]">Saved Daily</div>
+                </div>
+              </motion.div>
+              
+              {/* Floating Stats Card - Right */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="absolute -right-4 bottom-1/4 hidden lg:block"
+              >
+                <div className="rounded-xl bg-white border border-[var(--border-default)] p-4 shadow-[var(--shadow-lg)]">
+                  <div className="text-2xl font-bold text-[var(--success)]">50+</div>
+                  <div className="text-xs text-[var(--text-tertiary)]">EHR Systems</div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -359,7 +412,7 @@ export default function LunaScribePage() {
       
       {/* Stats Section */}
       <section className="py-12 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <motion.div
@@ -382,13 +435,17 @@ export default function LunaScribePage() {
       
       {/* Features Grid */}
       <section className="py-20">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-4">
+              <Zap className="h-4 w-4" />
+              Key Features
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               AI-Powered Documentation
             </h2>
@@ -400,6 +457,12 @@ export default function LunaScribePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const colorStyles = [
+                { bg: 'bg-[var(--luna-purple-lighter)]', text: 'text-[var(--luna-purple)]' },
+                { bg: 'bg-[var(--azure-blue-lighter)]', text: 'text-[var(--azure-blue)]' },
+                { bg: 'bg-[var(--accent-teal-lighter)]', text: 'text-[var(--accent-teal)]' },
+              ];
+              const colorStyle = colorStyles[index % colorStyles.length];
               return (
                 <motion.div
                   key={feature.title}
@@ -407,10 +470,10 @@ export default function LunaScribePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-[var(--bg-primary)] rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] hover:border-[var(--luna-purple)]/40 transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)] shadow-[var(--shadow-card)]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
+                  <div className={`w-12 h-12 rounded-xl ${colorStyle.bg} flex items-center justify-center mb-4`}>
+                    <Icon className={`h-6 w-6 ${colorStyle.text}`} />
                   </div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
                   <p className="text-[var(--text-secondary)]">{feature.description}</p>
@@ -423,7 +486,7 @@ export default function LunaScribePage() {
       
       {/* Workflow */}
       <section className="py-20 bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -463,7 +526,7 @@ export default function LunaScribePage() {
       
       {/* Testimonials */}
       <section className="py-20">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -498,7 +561,7 @@ export default function LunaScribePage() {
       
       {/* FAQ Section */}
       <section className="py-20 bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -528,34 +591,70 @@ export default function LunaScribePage() {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
-        <div className="mx-auto max-w-[1400px] px-6 text-center">
+      {/* CTA Section - Light Background Style */}
+      <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-24">
+        {/* Background blur effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
-              Reclaim Your Time
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-6">
+              <Sparkles className="h-4 w-4" />
+              Free Demo Available
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] mb-4">
+              Reclaim Your{" "}
+              <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">
+                Time
+              </span>
             </h2>
-            <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto text-lg">
               Join hundreds of physicians who have eliminated documentation burden with LunaScribe.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition-all duration-300"
+              <Button 
+                size="lg" 
+                asChild 
+                className="group bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] text-white shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-button-hover)] transition-all px-6"
               >
-                Request Demo
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link
-                href="/partner"
-                className="inline-flex items-center gap-2 bg-transparent border border-[var(--border-default)] text-[var(--text-primary)] bg-white font-semibold px-8 py-4 rounded-xl hover:bg-[var(--bg-secondary)] transition-all duration-300"
+                <Link href="/contact">
+                  Request Demo
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                asChild 
+                className="group border-[var(--border-default)] text-[var(--text-primary)] hover:bg-[var(--gray-50)] hover:border-[var(--border-strong)]"
               >
-                Healthcare Partnership
-              </Link>
+                <Link href="/partner">Healthcare Partnership</Link>
+              </Button>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-10 pt-8 border-t border-[var(--border-light)]">
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>HIPAA Compliant</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>EHR Integration</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>99% Accuracy</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

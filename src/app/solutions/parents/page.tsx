@@ -1,19 +1,21 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { 
   Home, Heart, BarChart, Brain, Shield, 
   Smartphone, Users, BookOpen, Sparkles, Star,
-  ArrowRight, Check, MessageSquare
+  ArrowRight, Check, MessageSquare, Zap, CheckCircle, ChevronDown
 } from 'lucide-react';
 import Link from 'next/link';
+import { Button } from "@/components/ui/button";
 
 const products = [
   {
     name: 'LunaLearn',
     description: 'Track your child\'s learning progress with real-time insights and personalized recommendations',
     href: '/products/education/lunalearn',
-    color: 'from-[var(--luna-purple)] to-[var(--luna-pink)]',
+    color: 'from-[var(--luna-purple)] to-[var(--azure-blue)]',
     parentFeatures: ['Progress dashboards', 'Learning style insights', 'Goal setting', 'Communication with teachers'],
   },
   {
@@ -30,6 +32,15 @@ const products = [
     color: 'from-[var(--azure-blue)] to-cyan-500',
     parentFeatures: ['Home sensory room setup', 'Bedtime routines', 'Calm-down tools', 'Consistent with therapy'],
   },
+];
+
+const colorStyles = [
+  { bg: 'from-[var(--luna-purple)] to-[var(--azure-blue)]' },
+  { bg: 'from-[var(--azure-blue)] to-cyan-500' },
+  { bg: 'from-teal-500 to-emerald-500' },
+  { bg: 'from-[var(--luna-purple)] to-[var(--azure-blue)]' },
+  { bg: 'from-[var(--azure-blue)] to-cyan-500' },
+  { bg: 'from-teal-500 to-emerald-500' },
 ];
 
 const benefits = [
@@ -103,6 +114,8 @@ const faqs = [
 ];
 
 export default function ParentsPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
@@ -113,42 +126,111 @@ export default function ParentsPage() {
           <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <div className="inline-flex items-center gap-2 bg-[var(--luna-purple)]/10 text-[var(--luna-purple)] px-4 py-2 rounded-full mb-6">
-              <Home className="h-4 w-4" />
-              <span className="text-sm font-medium">For Parents & Families</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-[var(--text-primary)]">Support Your Child's </span>
-              <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">Learning Journey</span>
-            </h1>
-            
-            <p className="text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
-              Stay connected to your child's education with real-time insights, understand their unique learning style, and create supportive environments at home.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/assessment"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-semibold px-8 py-4 rounded-[var(--radius-xl)] transition-all duration-300 shadow-[var(--shadow-card)]"
-              >
-                Try Lumina Screen
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link
-                href="/products/education/lunalearn"
-                className="inline-flex items-center gap-2 bg-[var(--bg-primary)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-semibold px-8 py-4 rounded-[var(--radius-xl)] transition-all duration-300 border border-[var(--border-default)]"
-              >
-                Explore LunaLearn
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-6">
+                <Home className="h-4 w-4" />
+                For Parents & Families
+              </span>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <span className="text-[var(--text-primary)]">Support Your Child's </span>
+                <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">Learning Journey</span>
+              </h1>
+              
+              <p className="text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
+                Stay connected to your child's education with real-time insights, understand their unique learning style, and create supportive environments at home.
+              </p>
+              
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <Link
+                  href="/assessment"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] text-white font-semibold px-8 py-4 rounded-[var(--radius-xl)] transition-all duration-300 shadow-[var(--shadow-card)]"
+                >
+                  Try Lumina Screen
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="/products/education/lunalearn"
+                  className="inline-flex items-center gap-2 bg-[var(--bg-primary)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-semibold px-8 py-4 rounded-[var(--radius-xl)] transition-all duration-300 border border-[var(--border-default)]"
+                >
+                  Explore LunaLearn
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right - Floating Stats Cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {/* Stat Card 1 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="bg-[var(--bg-primary)] rounded-[var(--radius-xl)] p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="w-12 h-12 rounded-[var(--radius-lg)] bg-gradient-to-br from-[var(--luna-purple)] to-[var(--azure-blue)] flex items-center justify-center mb-3">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <p className="text-3xl font-bold text-[var(--text-primary)]">10K+</p>
+                  <p className="text-sm text-[var(--text-secondary)]">Families Trust Us</p>
+                </motion.div>
+
+                {/* Stat Card 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="bg-[var(--bg-primary)] rounded-[var(--radius-xl)] p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 hover:-translate-y-1 mt-8"
+                >
+                  <div className="w-12 h-12 rounded-[var(--radius-lg)] bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-3">
+                    <CheckCircle className="h-6 w-6 text-white" />
+                  </div>
+                  <p className="text-3xl font-bold text-[var(--text-primary)]">Free</p>
+                  <p className="text-sm text-[var(--text-secondary)]">Assessment Available</p>
+                </motion.div>
+
+                {/* Stat Card 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="bg-[var(--bg-primary)] rounded-[var(--radius-xl)] p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="w-12 h-12 rounded-[var(--radius-lg)] bg-gradient-to-br from-[var(--azure-blue)] to-cyan-500 flex items-center justify-center mb-3">
+                    <Smartphone className="h-6 w-6 text-white" />
+                  </div>
+                  <p className="text-3xl font-bold text-[var(--text-primary)]">24/7</p>
+                  <p className="text-sm text-[var(--text-secondary)]">Access Anytime</p>
+                </motion.div>
+
+                {/* Stat Card 4 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="bg-[var(--bg-primary)] rounded-[var(--radius-xl)] p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 hover:-translate-y-1 mt-8"
+                >
+                  <div className="w-12 h-12 rounded-[var(--radius-lg)] bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-3">
+                    <Shield className="h-6 w-6 text-white" />
+                  </div>
+                  <p className="text-3xl font-bold text-[var(--text-primary)]">100%</p>
+                  <p className="text-sm text-[var(--text-secondary)]">Privacy Protected</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
       
@@ -161,6 +243,10 @@ export default function ParentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-4">
+              <Sparkles className="h-4 w-4" />
+              Our Solutions
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Tools for Engaged Parents
             </h2>
@@ -210,6 +296,10 @@ export default function ParentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-4">
+              <Zap className="h-4 w-4" />
+              Key Benefits
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Why Parents Love Lunamagix
             </h2>
@@ -218,6 +308,7 @@ export default function ParentsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
+              const colorStyle = colorStyles[index % colorStyles.length];
               return (
                 <motion.div
                   key={benefit.title}
@@ -225,10 +316,10 @@ export default function ParentsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-[var(--bg-primary)] rounded-[var(--radius-xl)] p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
+                  className="bg-[var(--bg-primary)] rounded-[var(--radius-xl)] p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-card-hover)] hover:border-[var(--luna-purple-light)]"
                 >
-                  <div className="w-12 h-12 rounded-[var(--radius-lg)] bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
+                  <div className={`w-12 h-12 rounded-[var(--radius-lg)] bg-gradient-to-br ${colorStyle.bg} flex items-center justify-center mb-4`}>
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{benefit.title}</h3>
                   <p className="text-[var(--text-secondary)]">{benefit.description}</p>
@@ -248,6 +339,10 @@ export default function ParentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-4">
+              <Sparkles className="h-4 w-4" />
+              Testimonials
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Parent Stories
             </h2>
@@ -284,6 +379,10 @@ export default function ParentsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-4">
+              <Sparkles className="h-4 w-4" />
+              FAQ
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               Common Questions
             </h2>
@@ -296,45 +395,101 @@ export default function ParentsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-[var(--bg-primary)] rounded-[var(--radius-lg)] p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)]"
+                transition={{ delay: index * 0.05 }}
+                className="bg-[var(--bg-primary)] rounded-xl border border-[var(--border-default)] shadow-[var(--shadow-card)] overflow-hidden"
               >
-                <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{faq.question}</h3>
-                <p className="text-[var(--text-secondary)]">{faq.answer}</p>
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-[var(--bg-secondary)] transition-colors"
+                >
+                  <span className="font-semibold text-[var(--text-primary)] pr-4">{faq.question}</span>
+                  <ChevronDown className={`h-5 w-5 text-[var(--luna-purple)] flex-shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 text-[var(--text-secondary)] border-t border-[var(--border-light)] pt-4">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
       
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)]">
-        <div className="container mx-auto px-4 text-center">
+      {/* CTA - Light Background Style */}
+      <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-24">
+        {/* Background blur effects */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Take the First Step
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--luna-purple-lighter)] px-4 py-2 text-sm font-semibold text-[var(--luna-purple)] border border-[var(--luna-purple)]/10 mb-6">
+              <Sparkles className="h-4 w-4" />
+              Free Assessment Available
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] mb-4">
+              Take the{" "}
+              <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">
+                First Step
+              </span>
             </h2>
-            <p className="text-purple-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto text-lg">
               Understand your child's unique learning profile with Lumina Screen—free and completely private.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/assessment"
-                className="inline-flex items-center gap-2 bg-white text-[var(--luna-purple)] font-semibold px-8 py-4 rounded-[var(--radius-xl)] hover:bg-gray-100 transition-all duration-300"
+              <Button 
+                size="lg" 
+                asChild 
+                className="group bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] text-white shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-button-hover)] transition-all px-6"
               >
-                Start Lumina Screen
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-[var(--radius-xl)] hover:bg-white/10 transition-all duration-300"
+                <Link href="/assessment">
+                  Start Lumina Screen
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                asChild 
+                className="group border-[var(--border-default)] text-[var(--text-primary)] hover:bg-[var(--gray-50)] hover:border-[var(--border-strong)]"
               >
-                Ask a Question
-              </Link>
+                <Link href="/contact">Ask a Question</Link>
+              </Button>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="mt-10 pt-8 border-t border-[var(--border-light)]">
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>100% Free</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>Completely Private</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>Expert-Designed</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

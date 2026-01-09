@@ -16,7 +16,7 @@ const products = [
     description: "A single platform where every stakeholder — parents, teachers, therapists, and administrators — sees what they need, contributes what they know, and trusts that nothing falls through the cracks.",
     icon: BookOpen,
     features: ["Smart Attendance", "Engagement Analytics", "IEP Engine", "Assessment Tools"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-blue-500 to-indigo-600",
     href: "/products/education/lunalearn"
   },
   {
@@ -26,7 +26,7 @@ const products = [
     description: "Transform traditional teaching with stunning 3D visualizations that make complex concepts tangible and memorable for every learner.",
     icon: Monitor,
     features: ["3D Models", "Interactive Content", "VR Compatible", "Curriculum Aligned"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-purple-500 to-pink-600",
     href: "/products/education/lunaviz"
   },
   {
@@ -36,7 +36,7 @@ const products = [
     description: "AI-powered campus security and monitoring system that keeps students safe while respecting privacy and enabling smart attendance.",
     icon: Eye,
     features: ["Facial Recognition", "Visitor Management", "Emergency Alerts", "Attendance Automation"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-teal-500 to-cyan-600",
     href: "/products/education/lunawatch"
   },
   {
@@ -46,7 +46,7 @@ const products = [
     description: "Professional-grade biomechanics analysis and coaching for schools, academies, and sports organizations.",
     icon: Activity,
     features: ["Motion Analysis", "Performance Tracking", "Injury Prevention", "Personalized Training"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-green-500 to-emerald-600",
     href: "/products/education/lunafit"
   },
   {
@@ -56,7 +56,7 @@ const products = [
     description: "Immersive sensory experiences designed for neurodiverse learners and special education environments.",
     icon: Sparkles,
     features: ["Sensory Rooms", "Therapeutic VR", "Calming Environments", "Engagement Tracking"],
-    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
+    color: "from-orange-500 to-red-600",
     href: "/products/education/lunasense"
   }
 ];
@@ -67,11 +67,11 @@ export default function EducationProductsPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-28">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-[var(--luna-purple)]/5 blur-3xl" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-[var(--azure-blue)]/5 blur-3xl" />
+          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-[var(--luna-purple)]/10 blur-3xl" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-[var(--luna-purple-light)]/10 blur-3xl" />
         </div>
         
-        <div className="relative mx-auto max-w-[1400px] px-6">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--luna-purple-lighter)]">
               <GraduationCap className="h-6 w-6 text-[var(--luna-purple)]" />
@@ -87,13 +87,13 @@ export default function EducationProductsPage() {
             Comprehensive AI-powered solutions for modern schools, coaching centers, and educational institutions. From smart attendance to engagement analytics.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Button size="lg" className="bg-[var(--bg-primary)] text-indigo-700 hover:bg-blue-50" asChild>
+            <Button size="lg" className="bg-white text-indigo-700 hover:bg-blue-50" asChild>
               <Link href="/contact?demo=true">
                 Request Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-[var(--text-primary)] hover:bg-[var(--bg-primary)]/10" asChild>
+            <Button size="lg" variant="outline" className="border-[var(--luna-purple)]/30 text-[var(--luna-purple)] hover:bg-[var(--luna-purple)]/10" asChild>
               <Link href="/assessment">
                 Try Free Assessment
               </Link>
@@ -103,8 +103,8 @@ export default function EducationProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
-        <div className="mx-auto max-w-[1400px] px-6">
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
               Our Education Products
@@ -119,10 +119,10 @@ export default function EducationProductsPage() {
               <Link
                 key={product.id}
                 href={product.href}
-                className="group relative rounded-2xl border border-[var(--border-default)] bg-[var(--bg-primary)] p-6 shadow-sm transition-all hover:shadow-lg hover:border-[var(--luna-purple)]"
+                className="group relative rounded-2xl border border-[var(--border-default)] bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:border-[var(--luna-purple)]"
               >
                 <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${product.color} mb-4`}>
-                  <product.icon className="h-6 w-6 text-[var(--text-primary)]" />
+                  <product.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:text-[var(--luna-purple)]">
                   {product.name}
@@ -155,7 +155,7 @@ export default function EducationProductsPage() {
 
       {/* CTA Section */}
       <section className="py-20 sm:py-28 bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-[1400px] px-6 text-center">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
             Ready to Transform Your Institution?
           </h2>
