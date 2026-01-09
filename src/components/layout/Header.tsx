@@ -35,17 +35,25 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
         >
           <Image 
-            src="/logo.svg" 
-            alt="Lunamagix - Smart Therapeutic Innovations" 
-            width={260} 
-            height={56}
-            className="h-14 w-auto object-contain"
+            src="/logo-icon.png" 
+            alt="Lunamagix Logo" 
+            width={50} 
+            height={50}
+            className="h-12 w-auto object-contain"
             priority
             unoptimized
           />
+          <div className="flex flex-col">
+            <span className="text-xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent tracking-wide">
+              LUNAMAGIX
+            </span>
+            <span className="text-[10px] font-medium text-[var(--text-tertiary)] tracking-wider hidden sm:block">
+              SMART THERAPEUTIC INNOVATIONS
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

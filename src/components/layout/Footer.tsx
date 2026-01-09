@@ -122,15 +122,23 @@ export function Footer() {
           <div className="grid gap-8 lg:grid-cols-6">
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <Link href="/" className="inline-block">
+              <Link href="/" className="flex items-center gap-3">
                 <Image 
-                  src="/logo.svg" 
-                  alt="Lunamagix - Smart Therapeutic Innovations" 
-                  width={280} 
+                  src="/logo-icon.png" 
+                  alt="Lunamagix Logo" 
+                  width={60} 
                   height={60}
-                  className="h-16 w-auto object-contain"
+                  className="h-14 w-auto object-contain"
                   unoptimized
                 />
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent tracking-wide">
+                    LUNAMAGIX
+                  </span>
+                  <span className="text-xs font-medium text-[var(--text-tertiary)] tracking-wider">
+                    SMART THERAPEUTIC INNOVATIONS
+                  </span>
+                </div>
               </Link>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--text-secondary)]">
                 Where cutting-edge AI meets compassionate innovation — empowering
