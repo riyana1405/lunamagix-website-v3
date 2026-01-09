@@ -280,8 +280,8 @@ export default function LunaGuidePage() {
           <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto max-w-[1400px] px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -338,7 +338,7 @@ export default function LunaGuidePage() {
       
       {/* Specs Bar */}
       <section className="py-8 border-y border-[var(--border-default)] bg-[var(--bg-secondary)]">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {specs.map((spec) => (
               <div key={spec.label} className="text-center">
@@ -351,8 +351,8 @@ export default function LunaGuidePage() {
       </section>
       
       {/* Features Grid */}
-      <section className="py-20 bg-[var(--bg-primary)]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 sm:py-24 bg-[var(--bg-primary)]">
+        <div className="mx-auto max-w-[1400px] px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -377,7 +377,7 @@ export default function LunaGuidePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] hover:border-[var(--luna-purple-light)] hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
                     <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
@@ -392,8 +392,8 @@ export default function LunaGuidePage() {
       </section>
       
       {/* Testimonials */}
-      <section className="py-20 bg-[var(--bg-secondary)]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 sm:py-24 bg-[var(--bg-secondary)]">
+        <div className="mx-auto max-w-[1400px] px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -427,8 +427,8 @@ export default function LunaGuidePage() {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-20 bg-[var(--bg-primary)]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 sm:py-24 bg-[var(--bg-primary)]">
+        <div className="mx-auto max-w-[1400px] px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -459,30 +459,30 @@ export default function LunaGuidePage() {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-[var(--gradient-cta)]">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
+        <div className="mx-auto max-w-[1400px] px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl mb-4">
               Experience Independent Mobility
             </h2>
-            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto text-lg">
               Schedule a personalized demo to see how LunaGuide can transform daily navigation.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-[var(--luna-purple)] font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] hover:from-[var(--luna-purple-dark)] hover:to-[var(--azure-blue-dark)] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-[var(--shadow-md)]"
               >
                 Schedule Demo
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 href="/partner"
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-white border border-[var(--border-default)] text-[var(--text-primary)] font-semibold px-8 py-4 rounded-xl hover:bg-[var(--gray-50)] hover:border-[var(--border-strong)] transition-all duration-300"
               >
                 Partner With Us
               </Link>
