@@ -16,7 +16,7 @@ const products = [
     description: "An intelligent robotic companion that helps visually impaired individuals navigate complex environments with confidence and independence.",
     icon: Navigation,
     features: ["AI Navigation", "Obstacle Detection", "Voice Guidance", "Indoor/Outdoor"],
-    color: "from-teal-500 to-cyan-600",
+    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
     href: "/products/assistive/lunaguide"
   },
   {
@@ -26,7 +26,7 @@ const products = [
     description: "A smart wheelchair that adapts to the user's needs, featuring autonomous navigation, voice control, and seamless integration with smart environments.",
     icon: Armchair,
     features: ["Autonomous Mode", "Voice Control", "Terrain Adaptation", "Smart Home Integration"],
-    color: "from-blue-500 to-indigo-600",
+    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
     href: "/products/assistive/lunamove"
   },
   {
@@ -36,7 +36,7 @@ const products = [
     description: "Advanced hearing enhancement technology that uses AI to filter noise, amplify speech, and provide real-time transcription for the hearing impaired.",
     icon: Ear,
     features: ["Noise Cancellation", "Speech Enhancement", "Real-time Transcription", "Customizable Profiles"],
-    color: "from-purple-500 to-pink-600",
+    color: "from-[var(--luna-purple)] to-[var(--azure-blue)]",
     href: "/products/assistive/lunasound"
   }
 ];
@@ -45,35 +45,35 @@ export default function AssistiveProductsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-600 via-cyan-700 to-blue-800 py-20 sm:py-28">
+      <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-28">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-teal-400/20 blur-3xl" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-blue-400/20 blur-3xl" />
+          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-[var(--luna-purple)]/5 blur-3xl" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-[var(--azure-blue)]/5 blur-3xl" />
         </div>
         
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-[1400px] px-6">
           <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20">
-              <Accessibility className="h-6 w-6 text-white" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--luna-purple-lighter)]">
+              <Accessibility className="h-6 w-6 text-[var(--luna-purple)]" />
             </div>
-            <span className="text-sm font-semibold text-teal-200 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-[var(--luna-purple)] uppercase tracking-wider">
               Assistive Technology
             </span>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
             Independence Through Innovation
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-teal-100/90">
+          <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
             AI-powered mobility aids, hearing enhancement, and independence-enabling devices that help people with disabilities live fuller, more autonomous lives.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Button size="lg" className="bg-white text-teal-700 hover:bg-teal-50" asChild>
+            <Button size="lg" className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white hover:opacity-90" asChild>
               <Link href="/contact?demo=true">
                 Request Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="outline" className="border-[var(--border-default)] text-[var(--text-primary)] bg-white hover:bg-[var(--bg-secondary)]" asChild>
               <Link href="/partner">
                 Partner With Us
               </Link>
@@ -83,8 +83,8 @@ export default function AssistiveProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
+        <div className="mx-auto max-w-[1400px] px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
               Our Assistive Products
@@ -135,7 +135,7 @@ export default function AssistiveProductsPage() {
 
       {/* Impact Section */}
       <section className="py-20 sm:py-28 bg-[var(--bg-secondary)]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1400px] px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
               Making a Difference
@@ -162,8 +162,8 @@ export default function AssistiveProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 sm:py-28 bg-[var(--bg-primary)]">
+        <div className="mx-auto max-w-[1400px] px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
             Interested in Our Assistive Technology?
           </h2>

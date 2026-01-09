@@ -73,14 +73,14 @@ function RobotGuideDemo() {
           <path
             d="M 20 120 Q 40 100, 60 90 Q 80 80, 100 85 Q 130 90, 150 100 Q 170 110, 200 115"
             fill="none"
-            stroke="rgba(59, 130, 246, 0.3)"
+            stroke="rgba(92, 45, 145, 0.3)"
             strokeWidth="8"
             strokeLinecap="round"
           />
           <path
             d="M 20 120 Q 40 100, 60 90 Q 80 80, 100 85 Q 130 90, 150 100 Q 170 110, 200 115"
             fill="none"
-            stroke="rgba(59, 130, 246, 0.8)"
+            stroke="rgba(92, 45, 145, 0.8)"
             strokeWidth="3"
             strokeLinecap="round"
             strokeDasharray="5,5"
