@@ -63,26 +63,22 @@ export default function AssessmentPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-900 via-teal-800 to-cyan-900 py-20 sm:py-28">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-teal-500/20 blur-3xl" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
-        </div>
+      <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-28">
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-center">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-teal-200">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] px-4 py-2 text-sm font-medium text-white">
                 <Sparkles className="h-4 w-4" />
                 Free Tool
               </span>
-              <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
                 Lumina Screen
               </h1>
-              <p className="mt-2 text-xl font-medium text-teal-100">
+              <p className="mt-2 text-xl font-medium text-[var(--luna-purple)]">
                 Free Online Neurodevelopmental Screening Tool
               </p>
-              <p className="mt-6 text-lg leading-relaxed text-teal-100/90">
+              <p className="mt-6 text-lg leading-relaxed text-[var(--text-secondary)]">
                 Early detection enables early intervention. Our AI-powered
                 screening tool helps parents and educators identify potential
                 developmental differences — the first step toward getting the
@@ -92,9 +88,9 @@ export default function AssessmentPage() {
                 {features.map((feature) => (
                   <div
                     key={feature.text}
-                    className="flex items-center gap-2 text-teal-100"
+                    className="flex items-center gap-2 text-[var(--text-secondary)]"
                   >
-                    <feature.icon className="h-5 w-5 text-teal-300" />
+                    <feature.icon className="h-5 w-5 text-[var(--luna-purple)]" />
                     {feature.text}
                   </div>
                 ))}
@@ -103,7 +99,7 @@ export default function AssessmentPage() {
                 <Button
                   size="lg"
                   asChild
-                  className="bg-white text-teal-900 hover:bg-teal-50"
+                  className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] text-white hover:opacity-90"
                 >
                   <Link href="#start">
                     Start Free Screening
@@ -118,14 +114,14 @@ export default function AssessmentPage() {
               {howItWorks.map((item) => (
                 <Card
                   key={item.step}
-                  className="border-teal-700/50 bg-white/10 backdrop-blur-sm"
+                  className="border-[var(--border-default)] bg-[var(--bg-primary)] shadow-[var(--shadow-card)]"
                 >
                   <CardHeader>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/20 text-lg font-bold text-teal-300">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--luna-purple)]/10 text-lg font-bold text-[var(--luna-purple)]">
                       {item.step}
                     </div>
-                    <CardTitle className="text-white">{item.title}</CardTitle>
-                    <CardDescription className="text-teal-200">
+                    <CardTitle className="text-[var(--text-primary)]">{item.title}</CardTitle>
+                    <CardDescription className="text-[var(--text-secondary)]">
                       {item.description}
                     </CardDescription>
                   </CardHeader>

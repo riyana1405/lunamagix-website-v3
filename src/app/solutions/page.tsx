@@ -118,20 +118,15 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--luna-purple)] via-[var(--luna-purple-dark)] to-indigo-900 py-20 sm:py-28">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl" />
-        </div>
-        
+      <section className="relative overflow-hidden bg-[var(--gradient-hero)] py-20 sm:py-28">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block text-sm font-semibold text-purple-200 uppercase tracking-wider mb-4">
+          <span className="inline-block text-sm font-semibold text-[var(--luna-purple)] uppercase tracking-wider mb-4">
             Our Solutions
           </span>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
             Solutions for Every Need
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-purple-100/90">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
             From mainstream education to specialized care, our AI-powered products adapt to serve diverse communities with compassion and innovation.
           </p>
         </div>

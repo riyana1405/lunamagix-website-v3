@@ -136,13 +136,13 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-950 py-16 sm:py-20">
+      <section className="bg-[var(--gradient-hero)] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
               Our Products
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-purple-100/90">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
               AI-powered solutions designed with compassion, built for impact.
             </p>
           </div>

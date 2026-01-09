@@ -106,12 +106,7 @@ export default function ParentsPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-br from-[var(--luna-purple)] via-[var(--luna-purple-dark)] to-indigo-900">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-rose-500/20 blur-3xl" />
-          <div className="absolute -bottom-1/4 -right-1/4 h-96 w-96 rounded-full bg-pink-500/20 blur-3xl" />
-        </div>
-        
+      <section className="relative pt-32 pb-20 overflow-hidden bg-[var(--gradient-hero)]">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -119,17 +114,17 @@ export default function ParentsPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-[var(--luna-purple)]/10 text-[var(--luna-purple)] px-4 py-2 rounded-full mb-6">
               <Home className="h-4 w-4" />
               <span className="text-sm font-medium">For Parents & Families</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Support Your Child's </span>
-              <span className="bg-gradient-to-r from-rose-200 to-pink-200 bg-clip-text text-transparent">Learning Journey</span>
+              <span className="text-[var(--text-primary)]">Support Your Child's </span>
+              <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">Learning Journey</span>
             </h1>
             
-            <p className="text-xl text-purple-100/90 mb-8 leading-relaxed">
+            <p className="text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
               Stay connected to your child's education with real-time insights, understand their unique learning style, and create supportive environments at home.
             </p>
             
@@ -143,7 +138,7 @@ export default function ParentsPage() {
               </Link>
               <Link
                 href="/products/education/lunalearn"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-[var(--radius-xl)] transition-all duration-300 border border-white/20"
+                className="inline-flex items-center gap-2 bg-[var(--bg-primary)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-semibold px-8 py-4 rounded-[var(--radius-xl)] transition-all duration-300 border border-[var(--border-default)]"
               >
                 Explore LunaLearn
               </Link>

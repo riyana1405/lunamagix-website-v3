@@ -108,13 +108,13 @@ export default function PartnerPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-950 py-20 sm:py-28">
+      <section className="bg-[var(--gradient-hero)] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
               Partner With Us
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-purple-100/90">
+            <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-[var(--text-secondary)]">
               Join our mission to democratize access to cutting-edge AI and
               immersive technology for education and quality of life
               enhancement.
