@@ -136,8 +136,13 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[var(--gradient-hero)] py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[var(--gradient-hero)] py-16 sm:py-20">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-[var(--luna-purple)]/5 blur-[120px]" />
+          <div className="absolute -bottom-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-[var(--azure-blue)]/5 blur-[120px]" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-[var(--text-primary)] sm:text-5xl">
               Our Products
