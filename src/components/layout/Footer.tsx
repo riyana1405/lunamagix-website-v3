@@ -126,9 +126,9 @@ export function Footer() {
                 <Image 
                   src="/logo.svg" 
                   alt="Lunamagix - Smart Therapeutic Innovations" 
-                  width={240} 
-                  height={56}
-                  className="h-14 w-auto object-contain"
+                  width={280} 
+                  height={60}
+                  className="h-16 w-auto object-contain"
                   unoptimized
                 />
               </Link>

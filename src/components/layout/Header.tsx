@@ -40,9 +40,9 @@ export function Header() {
           <Image 
             src="/logo.svg" 
             alt="Lunamagix - Smart Therapeutic Innovations" 
-            width={220} 
-            height={50}
-            className="h-12 w-auto object-contain"
+            width={260} 
+            height={56}
+            className="h-14 w-auto object-contain"
             priority
             unoptimized
           />
