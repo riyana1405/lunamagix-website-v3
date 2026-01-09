@@ -31,7 +31,7 @@ export function Header() {
           : "bg-white/80 backdrop-blur-sm"
       )}
     >
-      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 h-16">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 h-20">
         {/* Logo */}
         <Link
           href="/"
@@ -40,9 +40,9 @@ export function Header() {
           <Image 
             src="/logo-dark.png" 
             alt="Lunamagix" 
-            width={140} 
-            height={40}
-            className="h-10 w-auto object-contain"
+            width={180} 
+            height={56}
+            className="h-14 w-auto object-contain"
             priority
             unoptimized
           />
