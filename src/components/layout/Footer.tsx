@@ -129,6 +129,7 @@ export function Footer() {
                   width={160} 
                   height={48}
                   className="h-12 w-auto object-contain"
+                  unoptimized
                 />
               </Link>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--text-secondary)]">
