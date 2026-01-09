@@ -401,10 +401,13 @@ export default function SolutionsPage() {
               <Sparkles className="h-4 w-4" />
               Free Demo Available
             </span>
-            <h2 className="text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
-              Not Sure Which Solution Fits Your Needs?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+              Not Sure Which{" "}
+              <span className="bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent">
+                Solution Fits?
+              </span>
             </h2>
-            <p className="mt-4 text-lg text-[var(--text-secondary)]">
+            <p className="mt-4 text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
               Our team is here to help you find the perfect solution for your institution or organization.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -415,7 +418,7 @@ export default function SolutionsPage() {
               >
                 <Link href="/contact?demo=true">
                   Schedule a Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button 
@@ -429,19 +432,23 @@ export default function SolutionsPage() {
                 </Link>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-[var(--text-secondary)]">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                No credit card required
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                Free consultation
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                Expert guidance
-              </span>
+            
+            {/* Trust Indicators */}
+            <div className="mt-10 pt-8 border-t border-[var(--border-light)]">
+              <div className="flex flex-wrap items-center justify-center gap-6">
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>No credit card required</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>Free consultation</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                  <CheckCircle className="h-5 w-5 text-[var(--success)]" />
+                  <span>Expert guidance</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
