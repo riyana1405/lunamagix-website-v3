@@ -107,12 +107,12 @@ function RobotGuideDemo() {
           transition={{ duration: 0.5, repeat: Infinity }}
         >
           <div className="relative">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/50">
+            <div className="w-10 h-10 bg-gradient-to-br from-[var(--luna-purple)] to-[var(--azure-blue)] rounded-full flex items-center justify-center shadow-lg shadow-purple-500/30">
               <Dog className="h-5 w-5 text-white" />
             </div>
             {/* Sensor cone */}
             <motion.div 
-              className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-blue-400/30"
+              className="absolute -top-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-[var(--luna-purple)]/30"
               style={{ borderBottomWidth: '24px' }}
               animate={{ opacity: [0.3, 0.6, 0.3] }}
               transition={{ duration: 1, repeat: Infinity }}
@@ -379,8 +379,8 @@ export default function LunaGuidePage() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-blue-500" />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
                   </div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
                   <p className="text-[var(--text-secondary)]">{feature.description}</p>

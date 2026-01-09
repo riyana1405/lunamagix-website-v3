@@ -342,8 +342,8 @@ export default function LunaSoundPage() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-amber-400" />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
                   </div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
                   <p className="text-[var(--text-secondary)]">{feature.description}</p>
@@ -378,7 +378,7 @@ export default function LunaSoundPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-2xl p-8 border border-[var(--border-default)] shadow-[var(--shadow-card)] text-center"
               >
-                <div className="text-4xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent mb-2">
+                <div className="text-4xl font-bold bg-gradient-to-r from-[var(--luna-purple)] to-[var(--azure-blue)] bg-clip-text text-transparent mb-2">
                   {benefit.stat}
                 </div>
                 <p className="text-[var(--text-tertiary)] text-sm mb-4">{benefit.statLabel}</p>

@@ -349,10 +349,10 @@ export default function LunaMovePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:border-emerald-300 transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 border border-[var(--border-default)] shadow-[var(--shadow-card)] hover:border-[var(--luna-purple)]/30 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-emerald-600" />
+                  <div className="w-12 h-12 rounded-xl bg-[var(--luna-purple)]/10 flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-[var(--luna-purple)]" />
                   </div>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{feature.title}</h3>
                   <p className="text-[var(--text-secondary)]">{feature.description}</p>
@@ -392,7 +392,7 @@ export default function LunaMovePage() {
                 <ul className="space-y-2">
                   {useCase.outcomes.map((outcome) => (
                     <li key={outcome} className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="h-5 w-5 text-[var(--luna-purple)] flex-shrink-0 mt-0.5" />
                       <span className="text-[var(--text-secondary)] text-sm">{outcome}</span>
                     </li>
                   ))}
