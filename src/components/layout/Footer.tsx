@@ -124,11 +124,11 @@ export function Footer() {
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block">
                 <Image 
-                  src="/logo-dark.png" 
-                  alt="Lunamagix" 
-                  width={200} 
-                  height={64}
-                  className="h-16 w-auto object-contain"
+                  src="/logo.svg" 
+                  alt="Lunamagix - Smart Therapeutic Innovations" 
+                  width={240} 
+                  height={56}
+                  className="h-14 w-auto object-contain"
                   unoptimized
                 />
               </Link>
